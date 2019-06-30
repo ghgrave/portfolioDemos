@@ -43,6 +43,22 @@ app.get('/motd/:movieId', (req, res) => {
     });
 })
 
+app.get('/motd/multi/:searchTerm', (req,res) => {
+    let searchTerm = req.params.searchTerm;
+    let link = `${endpoint}/search/movie?${apiKey}&query=${searchTerm}`
+    fetch(link)
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        console.log('multiposter data from backend', data.results[0])
+        res.send(data.results)
+    })
+    .catch(err => {
+        res.status(400).send('Error downloading from DB for multi posters:', err);
+    })
+})
+
 app.listen(port, ()=> {
     console.log(`Listening on port: ${port}`);
 })

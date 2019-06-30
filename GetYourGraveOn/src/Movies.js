@@ -16,32 +16,51 @@ const movieId = 24428;
 
 function Movies() {
 
-    // const [movieRows, setMovieRows] = useState('');
+    const [movieRows, setMovieRows] = useState('');
     const [motd, setMotd] = useState('');
+    // const [searchTerm, setSearchTerm] = useState('');
 
     function getMotd() {
         const link = `${url}/${movieId}`;
         axios.get(link)
         .then(searchResults => {
             var movies = searchResults.data;
-            console.log('movies on front end', movies)
-            movies.poster_src = `https://image.tmdb.org/t/p/w200${movies.poster_path}`
-            // const moviePoster = <div className='test' key={movies.id}>
-            //                 <img alt="poster" src={movies.poster_src}></img>
-            //                 {movies.title}
-            //                 </div>
             const moviePoster = <Poster posterOnly={true} movies={movies}/>
             setMotd(moviePoster);
-    
         })
         .catch(err => {
             console.error("Error getting data from back end: ", err)
         })  
     };
 
+    function performSearch(searchTerm) {
+        const link = `${url}/multi/${searchTerm}`
+        // const url = `https://api.themoviedb.org/3/search/movie?api_key=4de3f13a4cdd05831b95a97d3b3e2da6&query=${searchTerm}`
+    
+        axios.get(link)
+        .then(searchResults => {
+          let movies = searchResults.data;
+          var movieRows = [];
+          movies.forEach((movie) => {
+            const movieRow = <Poster posterOnly={true} movies={movie}/> 
+            movieRows.push(movieRow)
+          })
+          setMovieRows(movieRows);
+        })
+        .catch(error => {
+          console.error('Error coming from DB:   ', error)
+        })
+
+      }
+    
+      function searchChangeHandler(event){
+        console.log(event.target.value);
+        performSearch(event.target.value);
+      
+      }
+
     useEffect(() => {
         getMotd();
-
     }, []);
 
     return (
@@ -58,7 +77,6 @@ function Movies() {
                         <Col>
                             <h3>Movie of the Day</h3>
                             <div id='motd'>
-                                {/* <Poster posterOnly={true}/> */}
                                 {motd}
                             </div>
                         </Col>
@@ -66,7 +84,7 @@ function Movies() {
                             <div id='posterSelected'>
 
                             </div>
-                            <input type="text" placeholder='Enter movie title here...'/>
+                            <input type="text" onChange={searchChangeHandler} placeholder='Enter movie title here...'/>
                         </Col> 
                     </Row>
                     <Row id='movieLinks'>
@@ -76,7 +94,7 @@ function Movies() {
                     </Row>
                 </Col>
                 <Col lg={5} id='multiPosterDisplay'>
-                    <h3>I am the movie poster col</h3>
+                    {movieRows}
                 </Col>
             </Row>
         </Container>

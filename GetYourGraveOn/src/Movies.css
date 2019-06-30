@@ -32,12 +32,25 @@ h3 {
 }
 
 
-
-#multiPosterDisplay{
-    border: blue solid 2px; 
+/* MULTI POSTER DISPLAYS */
+#multiPosterDisplay {
     height: 85vh; 
-    display: scroll;
+    overflow: scroll;
 }
+
+#multiPosterDisplay div {
+    display: inline;
+}
+
+#multiPosterDisplay img {
+    margin: 3% 4%;
+    width: 25%;
+}
+
+#multiPosterDisplay img:hover {
+    border: red 1px solid;
+}
+
 
 /* MOVIE DISPLAY POSTER STYLES */
 #movieDisplayRow h3 {
