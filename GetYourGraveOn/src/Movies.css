@@ -1,0 +1,39 @@
+#movies_container {
+    margin: 0;
+    padding: 0;
+}
+
+#titleImageRow h1 {
+    color: white;
+    text-shadow: -5px 1px black, 1px 1px 8px red;
+    text-align: right;
+    margin-top: 1%;
+    margin-right: 9%;
+    font-size: 3em;
+}
+
+#titleImageRow img {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+h3 {
+    color: white;
+}
+
+#movieDisplayRow {
+    border: green 2px solid;
+}
+
+#movieDisplayRow div:nth-of-type(1) {
+    border: red solid 2px;
+    
+}
+
+#movieDisplayRow div:nth-of-type(2) {
+    border: blue solid 2px;
+    
+}

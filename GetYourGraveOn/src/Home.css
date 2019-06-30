@@ -1,0 +1,122 @@
+body {
+    background: linear-gradient(#d5baba 60%, #1d1111  65%, #432626 70%, black 95%);
+    background: url('/assets/whitby-abbey-3790661_640.jpg');
+    background-size: cover;
+    font-family: 'Nosifer', cursive;
+}
+
+#title_container {
+    color: white;
+    text-shadow: -5px 1px black, 1px 1px 8px red;
+    text-align: right;
+    margin-top: 3%;
+    margin-right: 9%;
+    font-size: 3em;
+}
+
+#linksRow {
+    position: absolute;
+    bottom: 9%;
+    left: 3%;
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+li { 
+    list-style-type: none;
+}
+
+a {
+    color: #740303;
+    text-shadow: -1px -1px white, 1px 1px red, 1px 1px 5px white;
+    font-size: 1.75em;
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #820505;
+    text-shadow: -1px -1px white, 1px 1px black;
+    font-size: 1.75em;
+    opacity: 1;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+
+    #title_container {
+        text-align: center;
+        font-size: 6em;
+        margin-left: 3%;
+    }
+
+    #linksRow {
+        overflow: scroll;
+        height: 40vh;
+    }
+
+    a {
+        color: #ebf1b8;
+        text-shadow: -1px -1px black, 1px 1px red, 1px 1px 5px white;
+        font-size: 4em;
+        opacity: 0.5;
+        text-decoration: none;
+    }
+
+}
+
+/* @media screen and (max-width: 800px) {
+    #title_container {
+        text-align: center;
+        font-size: 2.5em;
+    }
+
+    #links-home {
+        overflow: scroll;
+        height: 40vh;
+    }
+
+    #links-home div {
+        width: 100%;
+        text-align: center;
+    }
+
+    a {
+        color: #ffffff;
+        text-shadow: -5px 1px black, 1px 1px 8px red;
+        opacity: .8;
+        font-size: 1.75em;
+    }
+} */
+
+@media screen and (max-width: 475px) {
+
+    #title_container {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    #linksRow {
+        overflow: scroll;
+        height: 40vh;
+    }
+
+    #linksRow div {
+        width: 100%;
+        text-align: center;
+    }
+
+    li {
+        margin-bottom: 3%;
+    }
+
+    a {
+        color: #ffffff;
+        text-shadow: -5px 1px black, 1px 1px 8px red;
+        opacity: .6;
+        font-size: 2em;
+    }
+}
+

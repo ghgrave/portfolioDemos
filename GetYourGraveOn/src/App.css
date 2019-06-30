@@ -1,0 +1,24 @@
+#palette {
+  color: #221111;  /* Spanish Shadow */
+  color: #772222;  /* Sloppy */
+  color: #bb4433;  /* Spanish Pink */
+  color: #ffbb99;  /* Peacht Keane */
+  color: #dd6655;  /* Coral */
+  color: #9f3621;  /* Dark Orange */
+  color: #8e755c;  /* Light Brown/Tan */
+  color: #ebf1b8;  /* Ooze - light green */
+  color: #665511;  /* DarkShi#$% */
+  color: #aa2222;  /* Aureus Aureus Aureum */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+
+body {
+  background: #221111;
+  width: 100vw;
+  height: 100vh;
+}
