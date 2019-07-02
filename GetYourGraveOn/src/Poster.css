@@ -1,0 +1,120 @@
+p {
+    color: initial;
+}
+
+
+/* NOTE: css for flipping the movie covers over */
+.movieResults {
+    overflow: scroll;
+}
+
+#movieDisplayRow .movieDesc{
+    color: #000000;
+    text-shadow: -1px 1px white;
+}
+
+#movieDisplayRow .genreDesc {
+  padding: 0;
+  margin: 0;
+
+}
+
+.small {
+    font-size: .50em;
+}
+
+#imdb_link {
+    opacity: 1;
+    color: #ff0000;
+    text-shadow: 1px 1px black;
+}
+
+#imdb_link:hover {
+    color: green;
+    font-size: .50em;
+}
+
+
+.flip-container {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+    margin: 15px;
+    display: inline-block;
+    /* border: red ridge 10px; */
+  }
+  
+  .flip-container, .front img, .back img{
+    width: 200px;
+    height: 300px;
+  }
+  
+  .flipper {
+    /* -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d; */
+  
+    position: relative;
+  }
+  
+  .front, .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  
+    -webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+  
+    -moz-transition: 0.6s;
+    -moz-transform-style: preserve-3d;
+  
+    -o-transition: 0.6s;
+    -o-transform-style: preserve-3d;
+  
+    -ms-transition: 0.6s;
+    -ms-transform-style: preserve-3d;
+  
+    transition: 0.6s;
+    transform-style: preserve-3d;
+  
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .back {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    width: 200px;
+    height: 300px;
+    background: #f3c89d;
+    color: black;
+    text-shadow: 1px 0 5px white;
+    font-size: .75em;
+    padding-left: 5px
+  }
+  
+  .flip-container:hover .back, .flip-container.hover .back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  
+  .flip-container:hover .front, .flip-container.hover .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  
+  .front {
+    z-index: 2;
+  }
+  

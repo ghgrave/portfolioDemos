@@ -18,7 +18,7 @@ const url = 'http://localhost:3001/motd';
 function Movies() {
     const [movieRows, setMovieRows] = useState('');
     const [motd, setMotd] = useState('');
-    const [selectedPoster, setSelectedPoster] = useState('Coming Soon');
+    const [selectedPoster, setSelectedPoster] = useState(<h1 id='comingSoon'>Coming Soon</h1>);
     // const [searchTerm, setSearchTerm] = useState('');
 
     function getMotd() {
@@ -57,7 +57,7 @@ function Movies() {
           movies.forEach((movie) => {
             // only returns movies that are classified as horror, thriller, scifi
             movie.genre_ids.forEach(num => {
-                if(num === 27 || (num === 23 && num === 878)) {
+                if(num === 27 || num === 23 || num === 878) {
                     const movieRow = <Poster key={movie.id} posterOnly={true} movies={movie} onClick={addToDisplay}/> 
                     movieRows.push(movieRow)
                 }
@@ -103,7 +103,7 @@ function Movies() {
                             <div id='motd'>
                                 {motd}
                             </div>
-                            <p>Bloody Pick</p>
+                            <p>Today's Bloodbath</p>
                         </Col>
                         <Col id='multiPosterDisplay'>
                             {movieRows} 

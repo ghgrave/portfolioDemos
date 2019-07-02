@@ -4,6 +4,11 @@
     width: 99vw;
 }
 
+#comingSoon {
+    text-shadow: 3px 0 white;
+    margin-top: 45%;
+}
+
 #titleImageRow h1 {
     color: #ffffff70;
     text-shadow: -2px 1px #000000, 1px 1px 0 white;
@@ -12,7 +17,6 @@
     /* margin-right: 9%; */
     font-size: 3em;
 }
-
 
 
 #titleImageRow img {
@@ -71,7 +75,7 @@ h3 {
 }
 
 #motd {
-    border: #a9a9a97e ridge 20px;
+    border: #a9a9a93e ridge 20px;
     height: 50vh;
     width: 60%;
     margin: 3% auto;
@@ -84,15 +88,15 @@ h3 {
 }
 
 #posterSelected {
-    border: #a9a9a97e ridge 20px;
-    height: 60vh;
-    width: 100%;
-    margin-top: 5%;
+    border: #a9a9a93e ridge 20px;
+    height: 50vh;
+    width: 60%;
+    margin: 3% auto;
 }
 
 #movieDisplayRow input {
     width: 75%;
-    margin: 5% auto 5% 10%;
+    margin: 2% auto 5% 10%;
     background: transparent;
     border: none;
     line-height: 1em;
@@ -158,3 +162,4 @@ li:nth-child(7) {
   font-size: 2em;
   margin-top: 30%;
 }
+
