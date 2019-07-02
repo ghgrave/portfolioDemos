@@ -7,6 +7,7 @@ import Home from './Home'
 function App() {
   return (
     <div className="App">
+      
       <Router>
           <Route exact path="/" component={Home} />
           <Route path="/movies" component={Movies} /> 

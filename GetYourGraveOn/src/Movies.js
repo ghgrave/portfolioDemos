@@ -3,6 +3,8 @@ import axios from 'axios';
 import NavLinks from './NavLinks'
 import Poster from './Poster'
 
+import { motdIds } from './helpers'
+
 // styling
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,26 +12,37 @@ import Col from 'react-bootstrap/Col';
 import './Movies.css'
 
 
-
 const url = 'http://localhost:3001/motd';
-const movieId = 24428;
+// const movieId = 136;
 
 function Movies() {
-
     const [movieRows, setMovieRows] = useState('');
     const [motd, setMotd] = useState('');
+    const [selectedPoster, setSelectedPoster] = useState('Coming Soon');
     // const [searchTerm, setSearchTerm] = useState('');
 
     function getMotd() {
-        const link = `${url}/${movieId}`;
+        let d = new Date();
+        const link = `${url}/${motdIds[d.getDate()-1]}`;
         axios.get(link)
         .then(searchResults => {
             var movies = searchResults.data;
-            const moviePoster = <Poster posterOnly={true} movies={movies}/>
+            const moviePoster = <Poster posterOnly={true} movies={movies} onClick={addToDisplay}/>
             setMotd(moviePoster);
         })
         .catch(err => {
             console.error("Error getting data from back end: ", err)
+        })  
+    };
+
+    function getFlipPoster(id) {
+        const link = `${url}/flip/${id}`;
+        axios.get(link)
+        .then(searchResults => {
+            setSelectedPoster(<Poster posterOnly={false} movies={searchResults.data}/>);
+        })
+        .catch(err => {
+            console.error("Error getting data from back end fro flip movie: ", err)
         })  
     };
 
@@ -42,21 +55,32 @@ function Movies() {
           let movies = searchResults.data;
           var movieRows = [];
           movies.forEach((movie) => {
-            const movieRow = <Poster posterOnly={true} movies={movie}/> 
-            movieRows.push(movieRow)
+            // only returns movies that are classified as horror, thriller, scifi
+            movie.genre_ids.forEach(num => {
+                if(num === 27 || (num === 23 && num === 878)) {
+                    const movieRow = <Poster key={movie.id} posterOnly={true} movies={movie} onClick={addToDisplay}/> 
+                    movieRows.push(movieRow)
+                }
+            })
           })
-          setMovieRows(movieRows);
+          movieRows.length > 0 ? setMovieRows(movieRows) : setMovieRows(<h1 className='noMatch'>No Matches Found</h1>);
         })
         .catch(error => {
           console.error('Error coming from DB:   ', error)
         })
+      }
 
+      function addToDisplay(event) {
+        getFlipPoster(event.target.getAttribute('movieid'));
       }
     
       function searchChangeHandler(event){
-        console.log(event.target.value);
         performSearch(event.target.value);
-      
+          
+      }
+
+      function clearInput() {
+
       }
 
     useEffect(() => {
@@ -72,19 +96,17 @@ function Movies() {
                 </Col>
             </Row>
             <Row id='movieDisplayRow'>
-                <Col lg={7}>
+                <Col lg={8}>
                     <Row>
                         <Col>
-                            <h3>Movie of the Day</h3>
+                            
                             <div id='motd'>
                                 {motd}
                             </div>
+                            <p>Bloody Pick</p>
                         </Col>
-                        <Col>
-                            <div id='posterSelected'>
-
-                            </div>
-                            <input type="text" onChange={searchChangeHandler} placeholder='Enter movie title here...'/>
+                        <Col id='multiPosterDisplay'>
+                            {movieRows} 
                         </Col> 
                     </Row>
                     <Row id='movieLinks'>
@@ -93,8 +115,13 @@ function Movies() {
                         </Col>
                     </Row>
                 </Col>
-                <Col lg={5} id='multiPosterDisplay'>
-                    {movieRows}
+                <Col lg={4} >
+                    <div id='posterSelected'>
+                        {selectedPoster}
+                    </div>
+                    <input type="text" onChange={searchChangeHandler} placeholder='Enter movie title here...'/>
+                    <span className='cross'  aria-labelledby='skull and crossbones' onClick={clearInput}>&#9760;</span>;
+
                 </Col>
             </Row>
         </Container>

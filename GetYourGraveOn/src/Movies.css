@@ -5,13 +5,15 @@
 }
 
 #titleImageRow h1 {
-    color: white;
-    text-shadow: -5px 1px black, 1px 1px 8px red;
+    color: #ffffff70;
+    text-shadow: -2px 1px #000000, 1px 1px 0 white;
     text-align: center;
     margin-top: 1%;
-    margin-right: 9%;
+    /* margin-right: 9%; */
     font-size: 3em;
 }
+
+
 
 #titleImageRow img {
     width: 99%;
@@ -29,13 +31,20 @@ h3 {
     /* border: green 2px solid; */
     width: 100vw;
     margin: 0 auto;
+    height: 87vh;
 }
 
+#movieDisplayRow p {
+    color: #ffffff80;
+    text-shadow: 2px 2px black, 1px 1px white;
+    text-align: center;
+}
 
 /* MULTI POSTER DISPLAYS */
 #multiPosterDisplay {
-    height: 85vh; 
+    height: 75vh; 
     overflow: scroll;
+    margin-top: 2%;
 }
 
 #multiPosterDisplay div {
@@ -62,14 +71,20 @@ h3 {
 }
 
 #motd {
-    border: darkgray ridge 20px;
+    border: #a9a9a97e ridge 20px;
     height: 50vh;
-    width: 95%;
+    width: 60%;
     margin: 3% auto;
 }
 
+#motd img {
+    margin: 3% 5%;
+    width: 90%;
+    height: 100;
+}
+
 #posterSelected {
-    border: darkgray ridge 20px;
+    border: #a9a9a97e ridge 20px;
     height: 60vh;
     width: 100%;
     margin-top: 5%;
@@ -80,23 +95,33 @@ h3 {
     margin: 5% auto 5% 10%;
     background: transparent;
     border: none;
-    line-height: 1.5em;
+    line-height: 1em;
 }
 
 ::placeholder {
     color: white;
     text-shadow: 1px 2px black, 1px 1px white;
     padding: 5px;
-    font-size: .75em;
+    font-size: 1em;
     letter-spacing: 2px;
 }
 
 input:focus {
-    /* outline: white 2px solid; */
+    outline: #ffffff80 5px ridge;
     outline: none;
-    color: darkgray;
-    text-shadow: 0 1px black, 2px 1px white;
+    color: red;
+    text-shadow: 2px 1px black, 2px 1px white;
     letter-spacing: 1px;
+}
+
+span {
+    margin-left: 3%;
+    font-size: .75em;
+}
+
+span:hover {
+    background: #ff000080;
+    /* cursor: url(/public/assets/fingerCursor.png); */
 }
 
 /* LINK styles */
@@ -123,4 +148,13 @@ li:nth-child(7) {
     margin: 0 2%;
     /* color: white; */
     opacity: 1;
+}
+
+/* no matches? */
+.noMatch {
+  color: red;
+  text-shadow: 1px 2px white;  
+  text-align: center;
+  font-size: 2em;
+  margin-top: 30%;
 }
