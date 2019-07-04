@@ -26,14 +26,9 @@ function Poster (props) {
                                         </h3>
                                         <p className='movieDesc'>{release_date}</p>
                                         {/* <p>{rated}</p> */}
-                                        {genres.map(genre => {
-                            console.log(genre.name)
-                                return <p className='movieDesc genreDesc'>{genre.name}</p>
-
-                            })
-
-                                        }
-                                        {/* {displayGenres} */}
+                                        {genres.map((genre, i) => {
+                                            return <p key={i} className='movieDesc genreDesc'>{genre.name}</p>
+                                        })}
                                         {/* <p className='movieDesc'>{genres[0].name}</p> */}
                                         {/* <h5 className="text-center shadow">Director(s):</h5> */}
                                         {/* <p>{director}</p> */}

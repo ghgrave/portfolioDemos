@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import NavLinks from './NavLinks'
+import NavbarComp from './NavbarComp'
 import Poster from './Poster'
 
 import { motdIds } from './helpers'
@@ -19,7 +20,7 @@ function Movies() {
     const [movieRows, setMovieRows] = useState('');
     const [motd, setMotd] = useState('');
     const [selectedPoster, setSelectedPoster] = useState(<h1 id='comingSoon'>Coming Soon</h1>);
-    // const [searchTerm, setSearchTerm] = useState('');
+    const [placeholderText, setPlaceholdertext] = useState('Enter movie title here...');
 
     function getMotd() {
         let d = new Date();
@@ -42,7 +43,7 @@ function Movies() {
             setSelectedPoster(<Poster posterOnly={false} movies={searchResults.data}/>);
         })
         .catch(err => {
-            console.error("Error getting data from back end fro flip movie: ", err)
+            console.error("Error getting data from back end from flip movie: ", err)
         })  
     };
 
@@ -57,7 +58,7 @@ function Movies() {
           movies.forEach((movie) => {
             // only returns movies that are classified as horror, thriller, scifi
             movie.genre_ids.forEach(num => {
-                if(num === 27 || num === 23 || num === 878) {
+                if(num === 27 || (num === 23 && num === 878)) {
                     const movieRow = <Poster key={movie.id} posterOnly={true} movies={movie} onClick={addToDisplay}/> 
                     movieRows.push(movieRow)
                 }
@@ -75,13 +76,14 @@ function Movies() {
       }
     
       function searchChangeHandler(event){
-        performSearch(event.target.value);
-          
+            performSearch(event.target.value);   
       }
 
-      function clearInput() {
-
-      }
+    //   function clearInput(event) {
+    //       console.log(event.key)
+    //       console.log(event.target.value)
+    //     setPlaceholdertext('Enter movie title here...');
+    //   }
 
     useEffect(() => {
         getMotd();
@@ -96,31 +98,32 @@ function Movies() {
                 </Col>
             </Row>
             <Row id='movieDisplayRow'>
-                <Col lg={8}>
+                <Col xl={8} sm={12}>
                     <Row>
-                        <Col>
+                        <Col xl={6} sm={12}>
                             
                             <div id='motd'>
                                 {motd}
                             </div>
-                            <p>Today's Bloodbath</p>
+                            <p id='bloodbath'>Today's Bloodbath</p>
                         </Col>
-                        <Col id='multiPosterDisplay'>
+                        <Col xl={6} sm={12} id='multiPosterDisplay'>
                             {movieRows} 
                         </Col> 
                     </Row>
                     <Row id='movieLinks'>
                         <Col className='inlineLinks' >
-                            <NavLinks/>
+                            <NavLinks className='remove'/>
+                            <NavbarComp id='navbarComp'/>
                         </Col>
                     </Row>
                 </Col>
-                <Col lg={4} >
+                <Col xl={4} sm={12} id='test'>
                     <div id='posterSelected'>
                         {selectedPoster}
                     </div>
-                    <input type="text" onChange={searchChangeHandler} placeholder='Enter movie title here...'/>
-                    <span className='cross'  aria-labelledby='skull and crossbones' onClick={clearInput}>&#9760;</span>;
+                    <input type="text" onChange={searchChangeHandler}  placeholder={placeholderText}/>
+                    {/* <span className='cross'  aria-labelledby='skull and crossbones' onClick={clearInput}>&#9760;</span>; */}
 
                 </Col>
             </Row>
