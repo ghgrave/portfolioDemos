@@ -227,6 +227,7 @@ li:nth-child(7) {
 @media screen and (max-width: 475px) {
 
     #titleImageRow h1 {
+        text-shadow: -1px 3px #000000, 1px 1px 0 white;
         text-align: right;
         font-size: 1.5em;
         margin: 3%
@@ -268,15 +269,15 @@ li:nth-child(7) {
         margin-top: -5%;
         text-align: center;
         font-size: .9em;
-        color: red;
-        text-shadow: 2px 2px black, 0 0 2px white;
+        color: #ff0000bd;
+        /* text-shadow: -1px 1px #000000, 1px 1px 0 white; */
     }
 
     #multiPosterDisplay {
         height: 50vh;
         width: 45vw;
         position: absolute;
-        bottom: -25vh;
+        bottom: 5%;
         right: 0;
     }
 
@@ -296,8 +297,8 @@ li:nth-child(7) {
     }
 
     #posterSelected h1 {
-        color: red;
-        text-shadow: 1px 1px black, 1px 1px white;
+        color: #ffffff70;
+        text-shadow: -1px 2px #000000, 1px 1px 0 white;
         margin-top: 50%;
         text-align: center;
         font-size: 1em;

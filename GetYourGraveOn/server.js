@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 app.get('/motd/:movieId', (req, res) => {
     let movieId = req.params.movieId;
-    let link = `${endpoint}/movie/${movieId}?${apiKey}`
+    let link = `${endpoint}/movie/${movieId}?${apiKey}&page=4`
     fetch(link)
     .then(res => {
         return res.json();

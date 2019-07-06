@@ -98,33 +98,27 @@ function Movies() {
                 </Col>
             </Row>
             <Row id='movieDisplayRow'>
-                <Col xl={8} sm={12}>
-                    <Row>
-                        <Col xl={6} sm={12}>
-                            
-                            <div id='motd'>
-                                {motd}
-                            </div>
-                            <p id='bloodbath'>Today's Bloodbath</p>
-                        </Col>
-                        <Col xl={6} sm={12} id='multiPosterDisplay'>
-                            {movieRows} 
-                        </Col> 
-                    </Row>
-                    <Row id='movieLinks'>
-                        <Col className='inlineLinks' >
-                            <NavLinks className='remove'/>
-                            <NavbarComp id='navbarComp'/>
-                        </Col>
-                    </Row>
+                <Col xl={4} sm={12}>
+                    <div id='motd'>
+                        {motd}
+                    </div>
+                    <p id='bloodbath'>Today's Bloodbath</p>
                 </Col>
+                <Col xl={4} sm={12} id='multiPosterDisplay'>
+                    {movieRows} 
+                </Col> 
                 <Col xl={4} sm={12} id='test'>
                     <div id='posterSelected'>
                         {selectedPoster}
                     </div>
                     <input type="text" onChange={searchChangeHandler}  placeholder={placeholderText}/>
                     {/* <span className='cross'  aria-labelledby='skull and crossbones' onClick={clearInput}>&#9760;</span>; */}
-
+                </Col>
+            </Row>
+            <Row id='movieLinks'>
+                <Col className='inlineLinks' >
+                    <NavLinks className='remove'/>
+                    <NavbarComp id='navbarComp'/>
                 </Col>
             </Row>
         </Container>
