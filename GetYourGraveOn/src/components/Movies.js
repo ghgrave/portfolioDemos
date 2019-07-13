@@ -4,7 +4,7 @@ import NavLinks from './NavLinks'
 import NavbarComp from './NavbarComp'
 import Poster from './Poster'
 
-import { motdIds } from './helpers'
+import { motdIds } from '../helpers'
 
 // styling
 import Container from 'react-bootstrap/Container';

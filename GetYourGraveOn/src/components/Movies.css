@@ -171,6 +171,13 @@ li:nth-child(7) {
   margin-top: 30%;
 }
 
+.smallLink {
+    font-size: .50em;
+    margin-left: .5%;
+    color: green;
+    text-shadow: 1px 1px black;
+}
+
 @media screen and (max-width: 1024px) {
     #movies_container h1 {
         text-align: center;
