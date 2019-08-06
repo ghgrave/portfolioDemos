@@ -13,7 +13,8 @@ import Col from 'react-bootstrap/Col';
 import './Movies.css'
 
 
-const url = 'http://localhost:3001/motd';
+const url = 'http://localhost:3000/motd';
+// const url = 'https://getyourgraveon.herokuapp.com/motd';
 // const movieId = 136;
 
 function Movies() {
@@ -24,7 +25,7 @@ function Movies() {
 
     function getMotd() {
         let d = new Date();
-        const link = `${url}/${motdIds[d.getDate()-1]}`;
+        const link = `/motd/${motdIds[d.getDate()-1]}`;
         axios.get(link)
         .then(searchResults => {
             var movies = searchResults.data;
@@ -37,7 +38,7 @@ function Movies() {
     };
 
     function getFlipPoster(id) {
-        const link = `${url}/flip/${id}`;
+        const link = `/motd/flip/${id}`;
         axios.get(link)
         .then(searchResults => {
             setSelectedPoster(<Poster posterOnly={false} movies={searchResults.data}/>);
@@ -48,7 +49,7 @@ function Movies() {
     };
 
     function performSearch(searchTerm) {
-        const link = `${url}/multi/${searchTerm}`
+        const link = `/motd/multi/${searchTerm}`
         // const url = `https://api.themoviedb.org/3/search/movie?api_key=4de3f13a4cdd05831b95a97d3b3e2da6&query=${searchTerm}`
     
         axios.get(link)
@@ -67,7 +68,7 @@ function Movies() {
           movieRows.length > 0 ? setMovieRows(movieRows) : setMovieRows(<h1 className='noMatch'>No Matches Found</h1>);
         })
         .catch(error => {
-          console.error('Error coming from DB:   ', error)
+          console.error('Error coming from backend search:   ', error)
         })
       }
 

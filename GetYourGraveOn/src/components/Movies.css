@@ -125,15 +125,10 @@ input:enabled {
     letter-spacing: 1px;
 }
 
-span {
+/* span {
     margin-left: 3%;
     font-size: .75em;
-}
-
-span:hover {
-    background: #ff000080;
-    /* cursor: url(/public/assets/fingerCursor.png); */
-}
+} */
 
 /* LINK styles */
 .navbar {
@@ -143,7 +138,7 @@ span:hover {
 
 .inlineLinks {
     position: absolute;
-    bottom: 3%;
+    bottom: 5%;
 }
 
 .inlineLinks li {
@@ -159,7 +154,13 @@ li:nth-child(7) {
     font-size: 1.25em;
     margin: 0 2%;
     /* color: white; */
+    text-shadow: 1px 1px white;
     opacity: 1;
+}
+
+.inlineLinks li a:hover {
+    color: red;
+    text-shadow: 1px 1px 0 white, 0 0 50px white;
 }
 
 /* no matches? */

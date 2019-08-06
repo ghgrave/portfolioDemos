@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-app.use(express.static('public'));
+app.use(express.static('./build'));
 
 const cors = require('cors')
 app.use(cors())
@@ -14,44 +14,45 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 const fetch = require('node-fetch');
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3000
 
 const endpoint= `https://api.themoviedb.org/3`;
 const apiKey = 'api_key=4de3f13a4cdd05831b95a97d3b3e2da6'
 
 
 app.get('/', (req, res) => {
-    res.send('Looks like we are home!')
+    console.log('Server is running and I am on homepage!!!!!')
+    res.send('./build/index.html')
 })
 
 app.get('/motd/:movieId', (req, res) => {
     let movieId = req.params.movieId;
     let link = `${endpoint}/movie/${movieId}?${apiKey}&page=4`
     fetch(link)
-    .then(res => {
-        return res.json();
-    })
-    .then(results => {
-        res.send(results)
-    })
-    .catch(err => {
-        res.status(400).send('Error downloading from DB:', err);
-    });
+        .then(res => {
+            return res.json();
+        })
+        .then(results => {
+            res.send(results)
+        })
+        .catch(err => {
+            res.status(400).send('Error downloading from DB for motd:', err);
+        });
 })
 
 app.get('/motd/flip/:movieId', (req, res) => {
     let movieId = req.params.movieId;
     let link = `${endpoint}/movie/${movieId}?${apiKey}`
     fetch(link)
-    .then(res => {
-        return res.json();
-    })
-    .then(results => {
-        res.send(results)
-    })
-    .catch(err => {
-        res.status(400).send('Error downloading from DB:', err);
-    });
+        .then(res => {
+            return res.json();
+        })
+        .then(results => {
+            res.send(results)
+        })
+        .catch(err => {
+            res.status(400).send('Error downloading from DB for flip:', err);
+        });
 })
 
 app.get('/motd/multi/:searchTerm', (req,res) => {
