@@ -13,7 +13,7 @@ import Col from 'react-bootstrap/Col';
 import './Movies.css'
 
 
-const url = 'http://localhost:3000/motd';
+const url = 'http://localhost:3001';
 // const url = 'https://getyourgraveon.herokuapp.com/motd';
 // const movieId = 136;
 

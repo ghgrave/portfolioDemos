@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-app.use(express.static('./build'));
+// app.use(express.static('./build'));
 
 const cors = require('cors')
 app.use(cors())
@@ -22,7 +22,7 @@ const apiKey = 'api_key=4de3f13a4cdd05831b95a97d3b3e2da6'
 
 app.get('/', (req, res) => {
     console.log('Server is running and I am on homepage!!!!!')
-    res.send('./build/index.html')
+    res.send('index.html')
 })
 
 app.get('/motd/:movieId', (req, res) => {
