@@ -2,5 +2,45 @@
   margin: 0;
   padding: 0;
   border: 0;
-  color: #551717;
+}
+
+body {
+    background-color: darkgreen;
+}
+
+h1 {
+    max-width: 60%;
+    margin: 35vh auto 0;
+    text-align: center;
+    font: bold 6em 'Henny Penny', serif;
+    text-shadow: 1px 1px 10px white, 6px 6px 10px darkgreen;
+    letter-spacing: .1em;
+}
+
+#loginForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+input {
+    display: block;
+    margin: 20px;
+    font-size: 1.25em;
+    line-height: 36px;
+    width: 15vw;
+    min-width: 100px;
+    box-shadow: 3px 3px #372449;
+    color: black;
+    font: bold 1em 'Henny Penny', serif;
+    letter-spacing: .1em;
+    text-align: center;
+}
+
+input::placeholder {
+    color: black;
+}
+
+input:focus {
+    outline: none;
 }
