@@ -12,6 +12,7 @@ h1 {
     width: 100%;
     margin: 35vh auto 0;
     text-align: center;
+    color: black;
     font: bold 6rem 'Henny Penny', serif;
     text-shadow: 1px 1px 10px white, 6px 6px 10px darkgreen;
     letter-spacing: .1em;
@@ -63,7 +64,7 @@ input:focus {
 
 @media (min-width: 1000px) { 
     input {
-        margin: 20px auto;
+        margin: 15px auto;
         width: 20vw;
     }
 

@@ -1,15 +1,18 @@
 import React from 'react';
 
-import {background_image} from './helpers';
+import {background_image, background_image2} from './helpers';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Background from '../src/images/skwerel-logo-white-1280.png';
+import Background2 from '../src/images/skwerel-logo-640.png';
 import './App.css';
 
 background_image.background = `#372449 url(${Background}) center no-repeat`;
+background_image2.background = `#372449 url(${Background2}) center no-repeat`;
+
 
 function App() {
   return (
@@ -24,7 +27,7 @@ function App() {
           </form>
         </Col>
         <Col lg={6} sm={12} xs={12} style={background_image}>
-          <h1>skwerel</h1>
+            <h1>skwerel</h1>
         </Col>
         <Col lg={3} sm={12} xs={12}></Col>
       </Row>
