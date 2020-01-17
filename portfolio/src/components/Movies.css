@@ -1,0 +1,370 @@
+#movies_container {
+    margin: 0;
+    padding: 0;
+    width: 99vw;
+}
+
+#comingSoon {
+    text-shadow: 3px 0 white;
+    margin-top: 45%;
+}
+
+#titleImageRow h1 {
+    color: #ffffff70;
+    text-shadow: -2px 1px #000000, 1px 1px 0 white;
+    text-align: center;
+    margin-top: 1%;
+    /* margin-right: 9%; */
+    font-size: 3em;
+}
+
+
+#titleImageRow img {
+    width: 99%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+h3 {
+    color: white;
+}
+
+#movieDisplayRow {
+    /* border: green 2px solid; */
+    width: 100vw;
+    margin: 0 auto;
+    height: 87vh;
+}
+
+#movieDisplayRow p {
+    color: #ffffff80;
+    text-shadow: 2px 2px black, 1px 1px white;
+    text-align: center;
+}
+
+/* MULTI POSTER DISPLAYS */
+#multiPosterDisplay {
+    height: 75vh; 
+    overflow: scroll;
+    margin-top: 2%;
+}
+
+#multiPosterDisplay div {
+    display: inline;
+}
+
+#multiPosterDisplay img {
+    margin: 3% 4%;
+    width: 25%;
+}
+
+#multiPosterDisplay img:hover {
+    border: red 1px solid;
+}
+
+
+/* MOVIE DISPLAY POSTER STYLES */
+#movieDisplayRow h3 {
+    margin: 5% auto;
+    width: 95%;
+    text-shadow: 2px 1px red;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#motd {
+    border: #a9a9a93e ridge 20px;
+    height: 50vh;
+    width: 60%;
+    margin: 3% auto;
+}
+
+#motd img {
+    margin: 3% 5%;
+    width: 90%;
+    height: 100;
+}
+
+#posterSelected {
+    border: #a9a9a93e ridge 20px;
+    height: 50vh;
+    width: 60%;
+    margin: 3% auto;
+}
+
+#movieDisplayRow input {
+    width: 75%;
+    margin: 2% auto 5% 10%;
+    background: transparent;
+    border: none;
+    line-height: 1em;
+}
+
+::placeholder {
+    color: white;
+    text-shadow: 1px 2px black, 1px 1px white;
+    padding: 5px;
+    font-size: 1em;
+    letter-spacing: 2px;
+}
+
+input:focus {
+    outline: #ffffff80 5px ridge;
+    outline: none;
+    /* color: red;
+    text-shadow: 2px 1px black, 2px 1px white;
+    letter-spacing: 1px; */
+    
+}
+
+input:enabled {
+    color: red;
+    text-shadow: 2px 1px black, 2px 1px white;
+    letter-spacing: 1px;
+}
+
+/* span {
+    margin-left: 3%;
+    font-size: .75em;
+} */
+
+/* LINK styles */
+.navbar {
+   /* display: none; */
+   visibility: hidden;
+}
+
+.inlineLinks {
+    position: absolute;
+    bottom: 5%;
+}
+
+.inlineLinks li {
+    display: inline;
+}
+
+li:nth-child(3),
+li:nth-child(7) {
+    display: none;
+}
+
+.inlineLinks li a {
+    font-size: 1.25em;
+    margin: 0 2%;
+    /* color: white; */
+    text-shadow: 1px 1px white;
+    opacity: 1;
+}
+
+.inlineLinks li a:hover {
+    color: red;
+    text-shadow: 1px 1px 0 white, 0 0 50px white;
+}
+
+/* no matches? */
+.noMatch {
+  color: red;
+  text-shadow: 1px 2px white;  
+  text-align: center;
+  font-size: 2em;
+  margin-top: 30%;
+}
+
+.smallLink {
+    font-size: .50em;
+    margin-left: .5%;
+    color: green;
+    text-shadow: 1px 1px black;
+}
+
+@media screen and (max-width: 1024px) {
+    #movies_container h1 {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    /* .navbar {
+        visibility: visible;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        color: red;
+        text-shadow: 1px 1px white, 2px 0 black;
+        font-size: 1em;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color:  #014301;
+    } */
+
+    /* .navbar-toggler {
+        background: yellow;
+        background: url('/assets/fingerCursor.png')
+    } */
+
+   
+
+}
+
+/* @media screen and (max-width: 800px) {
+    #title_container {
+        text-align: center;
+        font-size: 2.5em;
+    }
+
+    #links-home {
+        overflow: scroll;
+        height: 40vh;
+    }
+
+    #links-home div {
+        width: 100%;
+        text-align: center;
+    }
+
+    a {
+        color: #ffffff;
+        text-shadow: -5px 1px black, 1px 1px 8px red;
+        opacity: .8;
+        font-size: 1.75em;
+    }
+} */
+
+@media screen and (max-width: 475px) {
+
+    #titleImageRow h1 {
+        text-shadow: -1px 3px #000000, 1px 1px 0 white;
+        text-align: right;
+        font-size: 1.5em;
+        margin: 3%
+    }
+
+    .navbar {
+        visibility: visible;
+        width: 25%;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        color: white;
+        text-shadow: -2px 1px #000000, 1px 1px 0 red;
+        font-size: .75em;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: white;
+        text-shadow: -2px 1px red, 1px 1px 0 black;
+    } 
+
+    .inlineLinks  div li {
+        display: none;
+    }
+
+    #motd {
+        margin-right: 25%;
+        height: 32vh;
+        width: 40vw;
+    }
+
+    #motd img {
+        height: 25vh;
+        margin-left: 2%;
+        margin-top: -2%;
+    }
+
+    #movieDisplayRow #bloodbath {
+        margin-top: -5%;
+        text-align: center;
+        font-size: .9em;
+        color: #ff0000bd;
+        /* text-shadow: -1px 1px #000000, 1px 1px 0 white; */
+    }
+
+    #multiPosterDisplay {
+        height: 50vh;
+        width: 45vw;
+        position: absolute;
+        bottom: 5%;
+        right: 0;
+    }
+
+    #multiPosterDisplay img {
+        height: 25vh;
+        width: 35vw;
+        margin: 3%;
+    }
+
+    #posterSelected {
+        border: #a9a9a93e ridge 20px;
+        height: 45vh;
+        width: 55%;
+        position: absolute;
+        bottom: -22vh;
+        left: 3%;
+    }
+
+    #posterSelected h1 {
+        color: #ffffff70;
+        text-shadow: -1px 2px #000000, 1px 1px 0 white;
+        margin-top: 50%;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .noMatch {
+        color: green;
+        text-shadow: 1px 2px white;  
+        text-align: right;
+        font-size: 1.25em !important;
+        margin-left: -5%;
+        margin-top: 68%;
+        width: 100%;
+      }
+
+    .front {
+        border: green solid 2px;
+        height: 40vh;
+        width: 85%;
+        margin-left: -10%;
+        margin-top: -10%;
+    }
+
+    .front img {
+        height: 40vh;
+        width: 100%;
+    }
+
+    .back img, 
+    
+    .back {
+        border: red solid 2px;
+        width: 85%;
+        height: 40vh;
+        margin-left: -10%;
+        margin-top: -10%;
+    }
+
+    #movieDisplayRow input {
+        width: 44%;
+        margin: 3%;
+        background: transparent;
+        border: none;
+        line-height: 1em;
+        position: absolute;
+        bottom: -28vh;
+        left: 0;
+    }
+
+    ::placeholder {
+        font-size: .75em;
+        letter-spacing: 4px;
+        padding-left: 3%;
+    }
+
+    #test {
+        height: 0;
+    }
+
+}
+
