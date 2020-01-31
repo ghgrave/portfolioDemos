@@ -5,6 +5,8 @@ import NavbarComp from './NavbarComp'
 import Poster from './Poster'
 
 import { motdIds } from '../helpers'
+import atticImage from '../assets/images/attic.jpg'
+import countdown from '../assets/images/countdown.gif'
 
 // styling
 import Container from 'react-bootstrap/Container';
@@ -18,7 +20,9 @@ const url = 'http://localhost:3001';
 // const movieId = 136;
 
 function Movies() {
-    const [movieRows, setMovieRows] = useState('');
+    // const [movieRows, setMovieRows] = useState('');
+    const [movieRows, setMovieRows] = useState(<img src={countdown} alt="counting down gif"
+                                                    style={{margin: 0, width: '100%', height: '50vh'}}/>);
     const [motd, setMotd] = useState('');
     const [selectedPoster, setSelectedPoster] = useState(<h1 id='comingSoon'>Coming Soon</h1>);
     const [placeholderText, setPlaceholdertext] = useState('Enter movie title here...');
@@ -95,7 +99,7 @@ function Movies() {
             <Row id='titleImageRow'>
                 <Col>
                     <h1>Going to Pieces</h1>
-                    <img src="assets/attic.jpg" alt="attic"/>
+                    <img src={atticImage} alt="attic"/>
                 </Col>
             </Row>
             <Row id='movieDisplayRow'>
