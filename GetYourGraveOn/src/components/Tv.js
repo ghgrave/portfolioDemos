@@ -83,7 +83,10 @@ function Tv(){
                 <Col xl={6}  id='tvTest'>
                     <div id="largeTvScreen_container">
                         <img id="largeTvScreen" src="/assets/tv-screen.png" alt="Large TV screen"/>
-                        <iframe title='LargeTV' className="lg-you-tube" src="https://www.youtube.com/embed/fA7GZsJGYBg?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;start=58&amp;loop=1&amp;playlist=fA7GZsJGYBg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        {/* <iframe title='LargeTV' className="lg-you-tube" src="https://www.youtube.com/embed/fA7GZsJGYBg?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;start=58&amp;loop=1&amp;playlist=fA7GZsJGYBg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+                        
+                            <iframe title='LargeTV' src="https://giphy.com/embed/Yqn9tE2E00k4U" width="480" height="360" frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe>
+                        
                     </div>
                 </Col>
                 <Col xl={2}>

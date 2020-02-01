@@ -22,7 +22,7 @@ const url = 'http://localhost:3001';
 function Movies() {
     // const [movieRows, setMovieRows] = useState('');
     const [movieRows, setMovieRows] = useState(<img src={countdown} alt="counting down gif"
-                                                    style={{margin: 0, width: '100%', height: '50vh'}}/>);
+                                                    style={{margin: 0, width: '100%', height: '50vh', outline: 'none'}}/>);
     const [motd, setMotd] = useState('');
     const [selectedPoster, setSelectedPoster] = useState(<h1 id='comingSoon'>Coming Soon</h1>);
     const [placeholderText, setPlaceholdertext] = useState('Enter movie title here...');
