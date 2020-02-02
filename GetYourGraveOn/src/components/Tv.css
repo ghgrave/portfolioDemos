@@ -49,6 +49,29 @@ p {
     text-shadow: 1px 1px black, 3px 3px #772222;
 }
 
+#remote_container > h1 {
+    /* position: absolute;
+    left: 25%; */
+    color: #ffffff;
+    text-shadow: 1px 1px black, 3px 3px #772222;
+}
+
+#tv-guide {
+    width: 90%;
+    background-color: #3e3e3e4a;
+    border: #4b3f30 ridge 5px;
+    overflow: scroll;
+    height: 55vh;
+    margin: 1% auto;
+    
+    
+}
+
+#tv-guide p {
+    color: white;
+    text-shadow: 1px 1px black, 3px 3px #772222;
+}
+
 #remote {
     width: 90%;
     background-color: #000000;
@@ -91,7 +114,7 @@ p {
 
 #largeTvScreen_container {
     /* border: green 3px solid; */
-    transform: skewY(6deg);
+    transform: skewY(8deg);
     width: 35%;
     height: 30vh;
     position: absolute;
@@ -146,21 +169,9 @@ p {
 
 
 
-#tv-guide {
-    width: 95%;
-    background-color: #ebf1b8;
-    border: #4b3f30 ridge 5px;
-    overflow: scroll;
-    height: 60vh;
-    margin: 1% auto;
-    color: #aa2222;
-    text-shadow: 1px 1px 0 black, 2px 2px 1px #ffbb99, 4px 4px 0 black;
-}
 
-#tv-guide h1 {
-    position: absolute;
-    left: 25%;
-}
+
+
 
 @media screen and (max-width: 450px) {
     .lg-you-tube {

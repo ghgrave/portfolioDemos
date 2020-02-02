@@ -56,8 +56,9 @@ function Tv(){
             </Row>
             <Row>
                 <Col xl={4} id="remote_container">
+                <h1 className='text-center'>TV Guide</h1>
                     <div id='tv-guide'>
-                        <h1 className='text-center'>TV Guide</h1>
+                        {/* <h1 className='text-center'>TV Guide</h1> */}
                         <p>Stuff</p>
                         <p>Stuff</p>
                         <p>Stuff</p>
