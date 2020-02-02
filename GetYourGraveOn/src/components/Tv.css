@@ -40,15 +40,23 @@ p {
     position: relative;
 }
 
-
+#remote_container > p {
+    font-size: 2em;
+    padding-bottom: 0;
+    width: 50%;
+    margin: 0 0 0 40%;
+    color: #ffffff;
+    text-shadow: 1px 1px black, 3px 3px #772222;
+}
 
 #remote {
-    width: 95%;
-    background-color: darkgray;
+    width: 90%;
+    background-color: #000000;
     text-align: center;
-    height: 50vh;
-    margin: 10% auto;
+    height: 15vh;
+    margin: 2% auto;
     border-radius: 15%;
+    box-shadow: 0 0 50px #3e3e3e;
 }
 
 #remote p {
@@ -64,17 +72,16 @@ p {
 
 #remote li,
 #remote li:nth-of-type(3){
+    display: inline-block;
     list-style-type: none;
-    font-size: .5em;
-    text-align: left;
-    width: 100%;
-    padding: 2% 0;
+    font-size: .6rem;
+    margin: 7% 2% 0;
+    /* text-align: left; */
+
     text-shadow: 2px 3px 3px white;
+    /* border: 1px solid red; */
 }
 
-#remote li:nth-of-type(1) {
-    padding-top: 0;
-}
 
 #remote li:nth-of-type(1),
 #remote li:nth-of-type(7) {
@@ -82,25 +89,21 @@ p {
 }
 
 
-
-/* #largeTvScreen_container {
-    border: red solid 2px;
-    margin: 0 auto;;
-    width: 100vw;
-    height: 58vh;
-    min-height: 10%;
-    min-width: 10%;
-} */
-
 #largeTvScreen_container {
     /* border: green 3px solid; */
-    width: 45%;
+    transform: skewY(6deg);
+    width: 35%;
     height: 30vh;
-    /* margin: 0 auto; */
     position: absolute;
-    top: 42%;
-    /* bottom: 0; */
-    right: 40%;
+    top: 50%;
+    right: 45%;
+    box-shadow: 0 0 60px #1f0505;
+}
+
+.lg-you-tube {
+    height: 100%;
+    width: 100%;
+    opacity: .4;
 }
 
 #largeTvScreen {
@@ -128,17 +131,7 @@ p {
     min-width: 10%; */
 }
 
-.lg-you-tube {
-    transform: skewY(6deg);
-    position: absolute;
-    top: -16%;
-    left: 12%;
-    width: 75%;
-    height: 80%;
-    z-index: 0;
-    margin: 40px auto;
-    opacity: .4;
-}
+
 
     
 
@@ -151,16 +144,7 @@ p {
     z-index: 1;
 }
 
-/* .you-tube {
-    position: absolute;
-    top: 3%;
-    left: 12%;
-    background-color: #665511;
-    width: 75%;
-    height: 80%;
-    z-index: 0;
-    margin: 2% auto;
-} */
+
 
 #tv-guide {
     width: 95%;

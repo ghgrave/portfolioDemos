@@ -1,6 +1,8 @@
 import React from 'react';
 import NavLinks from './NavLinks'
 
+import tvScreen from '../assets/images/tv-screen.png'
+
 // styling
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -79,23 +81,30 @@ function Tv(){
                         <p>Stuff</p>
                         <p>Stuff</p>
                     </div>
-                </Col>
-                <Col xl={6}  id='tvTest'>
-                    <div id="largeTvScreen_container">
-                        <img id="largeTvScreen" src="/assets/tv-screen.png" alt="Large TV screen"/>
-                        {/* <iframe title='LargeTV' className="lg-you-tube" src="https://www.youtube.com/embed/fA7GZsJGYBg?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;start=58&amp;loop=1&amp;playlist=fA7GZsJGYBg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-                        
-                            <iframe title='LargeTV' src="https://giphy.com/embed/Yqn9tE2E00k4U" width="480" height="360" frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe>
-                        
-                    </div>
-                </Col>
-                <Col xl={2}>
+                    <p>REMOTE</p>
                     <div id="remote">
-                        <p>REMOTE</p>
                         <ul>
                             <NavLinks />
                         </ul>
                     </div>  
+                </Col>
+                <Col xl={6}  id='tvTest'>
+                    <div id="largeTvScreen_container">
+                        {/* <img id="largeTvScreen" src="/assets/tv-screen.png" alt="Large TV screen"/> */}
+                        {/* <iframe title='LargeTV' className="lg-you-tube" src="https://www.youtube.com/embed/fA7GZsJGYBg?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;start=58&amp;loop=1&amp;playlist=fA7GZsJGYBg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+                        
+                            {/* <iframe title='LargeTV' src="https://giphy.com/embed/Yqn9tE2E00k4U" width="480" height="360" frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe> */}
+                            <iframe title='LargeTV' src="https://www.youtube.com/embed/d8dLwiT2KOo?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=40&amp;end=55&amp;loop=1&amp" width='50%' height='10vh' frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe>
+                        
+                    </div>
+                </Col>
+                <Col xl={2}>
+                    {/* <div id="remote">
+                        <p>REMOTE</p>
+                        <ul>
+                            <NavLinks />
+                        </ul>
+                    </div>   */}
                 </Col>
             </Row>
             {/* <Row>
