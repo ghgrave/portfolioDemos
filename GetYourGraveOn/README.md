@@ -27,7 +27,7 @@ Purpose of the home page is to set the mood and allow user access to basic pages
 
     b) User will be able to click on video and go to a 3rd party for more info about the show they are interested in.
 
-3) The Tv guid is totally random and will change each time page is refreshed. Current times will display in a fashion to mimic a tv guide
+3) The TV Guide is totally random and will change each time page is refreshed. Current times will display in a fashion to mimic a tv guide
 
 #### BOOK PAGE
 
