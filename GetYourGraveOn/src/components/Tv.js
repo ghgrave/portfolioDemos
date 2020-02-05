@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import NavLinks from './NavLinks'
 
 // import tvScreen from '../assets/images/tv-screen.png'
@@ -13,7 +13,7 @@ import Col from 'react-bootstrap/Col';
 import './Tv.css';
 
 
-let tvResults = [];
+// let tvResults = [];
 
 // let tvResults = tvShow.map((data, i) =>{
 //     let youTubeSource = `https://www.youtube.com/embed/${data.id}?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=${data.start}&amp;end=${data.start+15}&amp;loop=1&amp;playlist=fA7GZsJGYBg`;
@@ -24,15 +24,19 @@ let tvResults = [];
 //         </div> 
 //     )
 // });
-let loadTvShows = (num) => {
-    let newTvArr = []
-    // let count = tvShow.length;
-    for(let i = 0; i< 3; i++){
+
+let newTvArr = []
+let loadTvShows = (num, bool) => {
+    // let newTvArr = []
+    let count = tvShow.length;
+    for(let i = 0; i< count; i++){
         let tempNum = Math.floor(Math.random()*num.length)
         newTvArr.push(num[tempNum])
         tvShow.splice(tempNum, 1);
     }
-    return tvResults = newTvArr.map((data, i) =>{
+    newTvArr = bool ? newTvArr.slice(0,3): newTvArr;
+    // newTvArr = newTvArr.slice(0,3);
+    return newTvArr.map((data, i) =>{
         let youTubeSource = `https://www.youtube.com/embed/${data.id}?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=${data.start}&amp;end=${data.start+15}&amp;loop=1&amp;playlist=fA7GZsJGYBg`;
         return (
             <div id='smTvScreen_container'>
@@ -41,12 +45,25 @@ let loadTvShows = (num) => {
             </div> 
         )
     });
+}
     
+
+let loadTvGuide = (data) =>{
+    let newData = loadTvShows(data, false);
+    console.log('Data', newData)
+    return newData.map((tvData, i)=>{
+        let {title} = tvData.props.children.props;
+        return <p>{Date.now()}   {title}</p>
+    })
 }
 
 
 function Tv(){
-    loadTvShows(tvShow);
+    const [tvGuide, setTvGuide] = useState(loadTvGuide(tvShow));
+    const [tvShows, setTvShows] = useState(loadTvShows(tvShow, true));
+    
+
+    
     return (
         <Container fluid={true} id='tv_background'>
             <Row id='tvTitleImageRow'>
@@ -59,7 +76,8 @@ function Tv(){
                 <Col xl={4} id="remote_container">
                 <h1 className='text-center'>TV Guide</h1>
                     <div id='tv-guide'>
-                        
+                        {tvGuide}
+                        {/* <p>Stuff</p>
                         <p>Stuff</p>
                         <p>Stuff</p>
                         <p>Stuff</p>
@@ -80,8 +98,7 @@ function Tv(){
                         <p>Stuff</p>
                         <p>Stuff</p>
                         <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
+                        <p>Stuff</p> */}
                     </div>
                     <p>REMOTE</p>
                     <div id="remote">
@@ -110,7 +127,7 @@ function Tv(){
                     <div id='smTvScreen_container'>
                         <iframe title='smallTV' src="https://www.youtube.com/embed/d8dLwiT2KOo?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=40&amp;end=55&amp;loop=1&amp" width='50%' height='10vh' frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe>
                     </div>  */}
-                    {tvResults} 
+                    {tvShows} 
                    
                 </Col>
             </Row>
