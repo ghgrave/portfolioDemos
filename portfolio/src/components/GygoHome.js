@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import './Home.css'
+import './GygoHome.css'
 
-function Home(){
+function GygoHome(){
     return (
         <Container fluid={true} id='home_container'>
             <Row>
@@ -56,4 +56,4 @@ function Home(){
     )
 }
 
-export default Home;
+export default GygoHome;

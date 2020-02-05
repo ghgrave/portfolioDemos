@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router , Route} from 'react-router-dom';
 import './App.css';
 import Movies from './components/Movies'
-import Home from './components/Home'
+import GygoHome from './components/GygoHome'
 import TV from './components/Tv'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       
       <Router>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={GygoHome} />
           <Route path="/movies" component={Movies} /> 
           <Route path="/tv" component={TV} />
           {/* <Route path="/games" component={Games} />   

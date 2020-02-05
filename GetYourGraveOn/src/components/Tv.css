@@ -115,11 +115,11 @@ p {
 #largeTvScreen_container {
     /* border: green 3px solid; */
     transform: skewY(8deg);
-    width: 35%;
+    width: 50%;
     height: 30vh;
     position: absolute;
     top: 50%;
-    right: 45%;
+    right: 30%;
     box-shadow: 0 0 60px #1f0505;
 }
 
@@ -146,10 +146,12 @@ p {
 
 
 #smTvScreen_container {
-    border: orange solid 2px;
-    margin: 0 auto;;
-    width: 100vw;
-    height: 30vh;
+    transform: skewY(8deg);
+    box-shadow: 0 0 50px #353030;
+    /* border: orange solid 2px; */
+    margin: 10% 0 15%;
+    width: 75%;
+    height: 20vh;
     /* min-height: 10%;
     min-width: 10%; */
 }
