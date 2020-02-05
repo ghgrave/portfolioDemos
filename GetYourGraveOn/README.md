@@ -17,5 +17,21 @@ Purpose of the home page is to set the mood and allow user access to basic pages
 
 3) User can click on one of the poster images and be able to see a larger version in a single display. The display will be flippable by hovering over it allowing user to get more detailed info on the 'back' of the poster.
 
+#### TV PAGE
+
+1) Page will load with 3 random tv shows playing and a 4th tv with static
+
+2) There is also a TV Guide that will load with all avaiable tv shows for the user to click on.
+
+    a) This tv show will then load in the larger tv for full length of trailer.
+
+    b) User will be able to click on video and go to a 3rd party for more info about the show they are interested in.
+
+3) The Tv guid is totally random and will change each time page is refreshed. Current times will display in a fashion to mimic a tv guide
+
+#### BOOK PAGE
+
+1)
+
 ## BACK END
 ### Server built with expressjs and utilizing node-fetch for HTTP requests
