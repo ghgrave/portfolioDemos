@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import NavLinks from './NavLinks'
 
 // import tvScreen from '../assets/images/tv-screen.png'
@@ -13,17 +13,40 @@ import Col from 'react-bootstrap/Col';
 import './Tv.css';
 
 
-let tvResults = tvShow.map((data, i) =>{
-    let youTubeSource = `https://www.youtube.com/embed/${data.id}?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=${data.start}&amp;end=${data.start+15}&amp;loop=1&amp;playlist=fA7GZsJGYBg`;
-    return (
-        <div id='smTvScreen_container'>
-            {/* <iframe title='smallTV' src="https://www.youtube.com/embed/d8dLwiT2KOo?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=40&amp;end=55&amp;loop=1&amp" width='50%' height='10vh' frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe> */}
-            <iframe title={data.showName} className="lg-you-tube" src={youTubeSource} allow="autoplay" frameBorder="0"></iframe>
-        </div> 
-    )
-});
+let tvResults = [];
+
+// let tvResults = tvShow.map((data, i) =>{
+//     let youTubeSource = `https://www.youtube.com/embed/${data.id}?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=${data.start}&amp;end=${data.start+15}&amp;loop=1&amp;playlist=fA7GZsJGYBg`;
+//     return (
+//         <div id='smTvScreen_container'>
+//             {/* <iframe title='smallTV' src="https://www.youtube.com/embed/d8dLwiT2KOo?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=40&amp;end=55&amp;loop=1&amp" width='50%' height='10vh' frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe> */}
+//             <iframe title={data.showName} className="lg-you-tube" src={youTubeSource} allow="autoplay" frameBorder="0"></iframe>
+//         </div> 
+//     )
+// });
+let loadTvShows = (num) => {
+    let newTvArr = []
+    // let count = tvShow.length;
+    for(let i = 0; i< 3; i++){
+        let tempNum = Math.floor(Math.random()*num.length)
+        newTvArr.push(num[tempNum])
+        tvShow.splice(tempNum, 1);
+    }
+    return tvResults = newTvArr.map((data, i) =>{
+        let youTubeSource = `https://www.youtube.com/embed/${data.id}?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=${data.start}&amp;end=${data.start+15}&amp;loop=1&amp;playlist=fA7GZsJGYBg`;
+        return (
+            <div id='smTvScreen_container'>
+                {/* <iframe title='smallTV' src="https://www.youtube.com/embed/d8dLwiT2KOo?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=40&amp;end=55&amp;loop=1&amp" width='50%' height='10vh' frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe> */}
+                <iframe title={data.showName} className="lg-you-tube" src={youTubeSource} allow="autoplay" frameBorder="0"></iframe>
+            </div> 
+        )
+    });
+    
+}
+
 
 function Tv(){
+    loadTvShows(tvShow);
     return (
         <Container fluid={true} id='tv_background'>
             <Row id='tvTitleImageRow'>
