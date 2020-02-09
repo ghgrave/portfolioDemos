@@ -5,6 +5,7 @@ import NavbarComp from './NavbarComp'
 import Poster from './Poster'
 
 import { motdIds } from '../helpers'
+import {CONFIG} from '../config'
 import atticImage from '../assets/images/attic.jpg'
 import countdown from '../assets/images/countdown.gif'
 
@@ -14,13 +15,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './Movies.css'
 
-
-const url = 'http://localhost:3001';
-// const url = 'https://getyourgraveon.herokuapp.com/motd';
-// const movieId = 136;
+const endpoint= `https://api.themoviedb.org/3`;
+const apiKey = `api_key=${CONFIG.TMDB_KEY}`
 
 function Movies() {
-    // const [movieRows, setMovieRows] = useState('');
     const [movieRows, setMovieRows] = useState(<img src={countdown} alt="counting down gif"
                                                     style={{margin: 0, width: '100%', height: '50vh', outline: 'none'}}/>);
     const [motd, setMotd] = useState('');
@@ -29,7 +27,7 @@ function Movies() {
 
     function getMotd() {
         let d = new Date();
-        const link = `/motd/${motdIds[d.getDate()-1]}`;
+        const link = `${endpoint}/movie/${motdIds[d.getDate()-1]}?${apiKey}`
         axios.get(link)
         .then(searchResults => {
             var movies = searchResults.data;
@@ -42,7 +40,7 @@ function Movies() {
     };
 
     function getFlipPoster(id) {
-        const link = `/motd/flip/${id}`;
+        const link = `${endpoint}/movie/${id}?${apiKey}`
         axios.get(link)
         .then(searchResults => {
             setSelectedPoster(<Poster posterOnly={false} movies={searchResults.data}/>);
@@ -53,12 +51,11 @@ function Movies() {
     };
 
     function performSearch(searchTerm) {
-        const link = `/motd/multi/${searchTerm}`
-        // const url = `https://api.themoviedb.org/3/search/movie?api_key=4de3f13a4cdd05831b95a97d3b3e2da6&query=${searchTerm}`
-    
+        const link = `${endpoint}/search/movie?${apiKey}&query=${searchTerm}`
+       
         axios.get(link)
         .then(searchResults => {
-          let movies = searchResults.data;
+          let movies = searchResults.data.results;
           var movieRows = [];
           movies.forEach((movie) => {
             // only returns movies that are classified as horror, thriller, scifi
@@ -72,7 +69,7 @@ function Movies() {
           movieRows.length > 0 ? setMovieRows(movieRows) : setMovieRows(<h1 className='noMatch'>No Matches Found</h1>);
         })
         .catch(error => {
-          console.error('Error coming from backend search:   ', error)
+          console.error('Perform search Error coming from backend search:   ', error)
         })
       }
 

@@ -50,10 +50,17 @@ let loadTvShows = (num, bool) => {
 
 let loadTvGuide = (data) =>{
     let newData = loadTvShows(data, false);
-    console.log('Data', newData)
+    let displayTime = new Date();
+    let hourDisplay = displayTime.getHours()
+    let minDisplay = 0;
     return newData.map((tvData, i)=>{
+        
+        minDisplay = (displayTime.getMinutes() + (30*i))%60 < 31 ? "30" : "00";
         let {title} = tvData.props.children.props;
-        return <p>{Date.now()}   {title}</p>
+        return  <p>{(hourDisplay+i)%12 === 0 ? 12 : (hourDisplay+i)%12}:
+                    {minDisplay}{(hourDisplay+i)%24 > 11 ? "pm" : "am"}
+                    <span class='tvShowTitles'>{title}</span> 
+                </p>
     })
 }
 

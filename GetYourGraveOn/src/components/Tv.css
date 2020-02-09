@@ -72,6 +72,18 @@ p {
     text-shadow: 1px 1px black, 3px 3px #772222;
 }
 
+.tvShowTitles {
+    color: green;
+    margin-left: 3%;
+    text-shadow: 1px 1px black, 2px 2px #772222;
+}
+
+.tvShowTitles:hover {
+    color: #772222;
+    text-shadow: 2px 2px black, 2px 2px green, 0 0 10px white;
+    cursor: pointer;
+}
+
 #remote {
     width: 90%;
     background-color: #000000;

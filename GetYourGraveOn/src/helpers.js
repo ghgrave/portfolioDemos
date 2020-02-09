@@ -12,7 +12,7 @@ export const tvShow = [
         start: 112
     },
     {
-        showName: 'AHS',
+        showName: 'American Horror Story',
         id: '-9KZr2Vn7CQ',
         start: 50
     },
@@ -22,18 +22,63 @@ export const tvShow = [
         start: 62
     },
     {
-        showName: 'Doggy',
-        id: '-1v_q6TWAL4',
-        start: 112
+        showName: 'Haunting of Hill House',
+        id: '3eqxXqJDmcY',
+        start: 57
     },
     {
-        showName: 'Monkee Channel',
-        id: '-9KZr2Vn7CQ',
+        showName: 'Tales Form the Crypt',
+        id: 'A3s8xAVkpDc',
         start: 50
     },
     {
-        showName: 'HGTV',
-        id: 't-775JyzDTk',
-        start: 62
+        showName: 'True Blood',
+        id: 'hE8wwYzKJOs',
+        start: 120
+    },
+    {
+        showName: 'Night Gallery',
+        id: '5rVLeogPTI4',
+        start: 120
+    },
+    {
+        showName: 'Walking Dead',
+        id: 'qn1kXp9T9EY',
+        start: 92
+    },
+    {
+        showName: 'Twilight Zone',
+        id: '5ymjp2uIBws',
+        start: 25
+    },
+    {
+        showName: 'Munsters',
+        id: '8TTIqK9nFH8',
+        start: 25
+    },
+    {
+        showName: 'Addams Family',
+        id: 'ZZ5IWRz78DY',
+        start: 15
+    },
+    {
+        showName: 'Dark Shadows',
+        id: 'xvQQ55O2Uvk',
+        start: 196
+    },
+    {
+        showName: 'Tales From the Darkside',
+        id: 'Mioevxb2CfA',
+        start: 38
+    },
+    {
+        showName: 'Friday the 13th: the Series',
+        id: 'pYquKiVJAlE',
+        start: 10
+    },
+    {
+        showName: 'Freddy\'s Nightmares',
+        id: 'Us_deD2MOp0',
+        start: 2
     }
 ]
