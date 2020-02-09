@@ -13,21 +13,8 @@ import Col from 'react-bootstrap/Col';
 import './Tv.css';
 
 
-// let tvResults = [];
-
-// let tvResults = tvShow.map((data, i) =>{
-//     let youTubeSource = `https://www.youtube.com/embed/${data.id}?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=${data.start}&amp;end=${data.start+15}&amp;loop=1&amp;playlist=fA7GZsJGYBg`;
-//     return (
-//         <div id='smTvScreen_container'>
-//             {/* <iframe title='smallTV' src="https://www.youtube.com/embed/d8dLwiT2KOo?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=40&amp;end=55&amp;loop=1&amp" width='50%' height='10vh' frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe> */}
-//             <iframe title={data.showName} className="lg-you-tube" src={youTubeSource} allow="autoplay" frameBorder="0"></iframe>
-//         </div> 
-//     )
-// });
-
 let newTvArr = []
 let loadTvShows = (num, bool) => {
-    // let newTvArr = []
     let count = tvShow.length;
     for(let i = 0; i< count; i++){
         let tempNum = Math.floor(Math.random()*num.length)
@@ -35,7 +22,6 @@ let loadTvShows = (num, bool) => {
         tvShow.splice(tempNum, 1);
     }
     newTvArr = bool ? newTvArr.slice(0,3): newTvArr;
-    // newTvArr = newTvArr.slice(0,3);
     return newTvArr.map((data, i) =>{
         let youTubeSource = `https://www.youtube.com/embed/${data.id}?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=${data.start}&amp;end=${data.start+15}&amp;loop=1&amp;playlist=fA7GZsJGYBg`;
         return (
@@ -68,6 +54,7 @@ let loadTvGuide = (data) =>{
 function Tv(){
     const [tvGuide, setTvGuide] = useState(loadTvGuide(tvShow));
     const [tvShows, setTvShows] = useState(loadTvShows(tvShow, true));
+    const [lgScreen, setLgScreen] = useState("https://giphy.com/embed/Yqn9tE2E00k4U")
     
 
     
@@ -84,28 +71,6 @@ function Tv(){
                 <h1 className='text-center'>TV Guide</h1>
                     <div id='tv-guide'>
                         {tvGuide}
-                        {/* <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p>
-                        <p>Stuff</p> */}
                     </div>
                     <p>REMOTE</p>
                     <div id="remote">
@@ -120,7 +85,9 @@ function Tv(){
                         {/* <iframe title='LargeTV' className="lg-you-tube" src="https://www.youtube.com/embed/fA7GZsJGYBg?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;start=58&amp;loop=1&amp;playlist=fA7GZsJGYBg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
                         
                             {/* <iframe title='LargeTV' src="https://giphy.com/embed/Yqn9tE2E00k4U" width="480" height="360" frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe> */}
-                            <iframe title='LargeTV' src="https://www.youtube.com/embed/d8dLwiT2KOo?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=40&amp;end=55&amp;loop=1&amp" width='50%' height='10vh' allow="autoplay" frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe>
+                            {/* <iframe title='LargeTV' src="https://www.youtube.com/embed/d8dLwiT2KOo?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=40&amp;end=55&amp;loop=1&amp" width='50%' height='10vh' allow="autoplay" frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe> */}
+                            {/* <iframe title='LargeTV' src="https://www.youtube.com/embed/?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=40&amp;end=55&amp;loop=1&amp" width='50%' height='10vh' allow="autoplay" frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe> */}
+                            <iframe title='LargeTV' src={lgScreen} allow="autoplay" frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe>
                         
                     </div>
                 </Col>
