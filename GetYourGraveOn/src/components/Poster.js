@@ -14,7 +14,7 @@ function Poster (props) {
                         </div>
     } else {
         let imdb_idLink = `https://www.imdb.com/title/${imdb_id}`
-        displayPoster =  <div className="flip-container" ontouchstart="this.classList.toggle('hover');">
+        displayPoster =  <div className="flip-container" onTouchStart="this.classList.toggle('hover');">
                             <div className="flipper">
                                 <div className="front">
                                     <img alt={title} title={title} src={poster_src} key={id} ></img>

@@ -133,6 +133,15 @@ p {
     top: 50%;
     right: 30%;
     box-shadow: 0 0 60px #1f0505;
+    padding: 0;
+}
+
+h3 {
+    position: absolute;
+    top: -18%;
+    right: 0;
+    color: white;
+    padding: 0;
 }
 
 .lg-you-tube {
@@ -141,17 +150,16 @@ p {
     opacity: .4;
 }
 
-#largeTvScreen {
+/* #largeTvScreen {
     position: relative;
     transform: skewY(6deg);
     width: 100%;
-    /* min-height: 10%;
-    min-width: 10%; */
+  
     z-index: 1;
     bottom: 0;
     opacity: 1;
-    /* right: 33%; */
-}
+    
+} */
 
 
 
