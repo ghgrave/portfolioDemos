@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import NavLinks from "./NavLinks";
 
-// import tvScreen from '../assets/images/tv-screen.png'
-
 // data object
 import { tvShow } from "../helpers.js";
 
@@ -14,20 +12,22 @@ import "./Tv.css";
 
 function Tv() {
   let newTvArr = [];
-  let loadTvShows = (num, bool) => {
+  let loadTvShows = (num, flag) => {
     let count = tvShow.length;
     for (let i = 0; i < count; i++) {
       let tempNum = Math.floor(Math.random() * num.length);
       newTvArr.push(num[tempNum]);
       tvShow.splice(tempNum, 1);
     }
-    newTvArr = bool ? newTvArr.slice(0, 3) : newTvArr;
-    return newTvArr.map(data => {
+    let playlistArr = newTvArr;
+    newTvArr = flag ? newTvArr.slice(0, 3) : newTvArr;
+    return newTvArr.map((data, i) => {
+      let playlistId = (i === playlistArr.length-1) ? 0 : playlistArr.length-(i+1);
       let youTubeSource = `https://www.youtube.com/embed/${
         data.id
       }?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=${
         data.start
-      }&amp;end=${data.start + 15}&amp;loop=1&amp;playlist=fA7GZsJGYBg`;
+      }&amp;end=${data.start + 15}&amp;loop=1&amp;playlist=${playlistArr[playlistId].id}`;
       return (
         <div id="smTvScreen_container" key={data.id}>
           {/* <iframe title='smallTV' src="https://www.youtube.com/embed/d8dLwiT2KOo?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=40&amp;end=55&amp;loop=1&amp" width='50%' height='10vh' frameBorder="0" className="giphy-embed lg-you-tube" allowFullScreen></iframe> */}
@@ -80,7 +80,7 @@ function Tv() {
 
   const [tvGuide, setTvGuide] = useState(loadTvGuide(tvShow));
   const [tvShows, setTvShows] = useState(loadTvShows(tvShow, true));
-  const [tvTitle, setTvTitle] = useState("Test Title");
+  const [tvTitle, setTvTitle] = useState("");
   const [lgScreen, setLgScreen] = useState(
     "https://giphy.com/embed/Yqn9tE2E00k4U"
   );
