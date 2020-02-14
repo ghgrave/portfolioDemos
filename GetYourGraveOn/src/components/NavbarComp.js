@@ -11,10 +11,10 @@ function NavbarComp() {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                 <Nav.Link href="/tv">TV</Nav.Link>
-                <Nav.Link href="/books">Books</Nav.Link>
+                <Nav.Link >Books</Nav.Link>
                 <Nav.Link href="/games">Games</Nav.Link>
-                <Nav.Link href="/sites">Sites</Nav.Link>
-                <Nav.Link href="/reviews">Reviews</Nav.Link>
+                <Nav.Link >Sites</Nav.Link>
+                <Nav.Link >Reviews</Nav.Link>
                 <Nav.Link href="/">Graveyard</Nav.Link>
                 {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

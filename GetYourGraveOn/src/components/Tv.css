@@ -8,8 +8,7 @@
     /* border: purple solid 3px; */
     position: relative;
     font-family: creepster, fantasy;
-    /* text-shadow: 3px 3px 3px #772222, 5px 5px 0 black; */
-    
+    /* text-shadow: 3px 3px 3px #772222, 5px 5px 0 black; */ 
 }
 
 #tvBackgroundImage {
@@ -63,8 +62,6 @@ p {
     overflow: scroll;
     height: 55vh;
     margin: 1% auto;
-    
-    
 }
 
 #tv-guide p {
@@ -136,7 +133,7 @@ p {
     padding: 0;
 }
 
-h3 {
+#tvTitle {
     position: absolute;
     top: -18%;
     right: 0;

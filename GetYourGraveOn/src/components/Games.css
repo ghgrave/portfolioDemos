@@ -1,0 +1,55 @@
+#gamesImageRow img {
+    width: 99%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+#gamesImageRow h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+    color: #64d6dd;
+    /* color: #3a7531; */
+    /* color: #ffffff; */
+    text-shadow: 1px 1px red, 3px 3px darkblue;
+    letter-spacing: .5em;
+}
+
+/* LINK styles */
+.navbar {
+    /* display: none; */
+    visibility: hidden;
+    color: #64d6dd;
+ }
+ 
+ .inlineLinks {
+     position: absolute;
+     bottom: 5%;
+     
+ }
+ 
+ .inlineLinks li {
+     display: inline;
+ }
+ 
+ li:nth-child(4),
+ li:nth-child(7) {
+     display: none;
+ }
+ 
+ .inlineLinks li a {
+     font-size: 1.25em;
+     margin: 0 2%;
+     color: #64d6dd;
+     text-shadow: 1px 1px black;
+     opacity: 1;
+ }
+ 
+ .inlineLinks li a:hover {
+     color: #39ff14;
+     color: #dbe7d5;
+     /* color: #64d6dd; */
+     text-shadow: 1px 1px 0 red, 0 0 50px white;
+ }

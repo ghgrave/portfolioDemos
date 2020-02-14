@@ -1,6 +1,7 @@
 {
-  "name": "gygo",
+  "name": "getyourgraveon",
   "homepage": "http://getyourgraveon.com/",
+  "description": "Horror fan site for all things spooky where user can reasearch new movies, books, tv shows, play games and check out links to other horror related web pages",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

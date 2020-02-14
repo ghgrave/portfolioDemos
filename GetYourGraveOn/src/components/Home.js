@@ -27,7 +27,7 @@ function Home() {
         </Col>
         <Col xl={2} lg={6} md={12} sm={6}>
           <li>
-            <Link to="/books">Books</Link>
+            <Link to="/">Books</Link>
           </li>
         </Col>
         <Col xl={2} lg={6} md={12} sm={6}>
@@ -37,7 +37,7 @@ function Home() {
         </Col>
         <Col xl={2} lg={6} md={12} sm={6}>
           <li>
-            <Link to="/sites">Sites</Link>
+            <Link to="/">Sites</Link>
           </li>
         </Col>
         <Col xl={2} lg={6} md={12} sm={6}>
@@ -47,7 +47,7 @@ function Home() {
         </Col>
         <Col xl={2} lg={6} md={12} sm={6}>
           <li>
-            <Link to="/reviews">Reviews</Link>
+            <Link to="/">Reviews</Link>
           </li>
         </Col>
       </Row>

@@ -111,7 +111,7 @@ function Tv() {
         <Col xl={5} id="tvTest">
           {/* <h3>{tvTitle}</h3> */}
           <div id="largeTvScreen_container">
-          <h3>{tvTitle}</h3>
+          <h3 id='tvTitle'>{tvTitle}</h3>
             {/* <img id="largeTvScreen" src="/assets/tv-screen.png" alt="Large TV screen"/> */}
             {/* <iframe title='LargeTV' className="lg-you-tube" src="https://www.youtube.com/embed/fA7GZsJGYBg?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;start=58&amp;loop=1&amp;playlist=fA7GZsJGYBg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
 

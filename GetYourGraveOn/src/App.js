@@ -1,20 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router , Route} from 'react-router-dom';
-import './App.css';
-import Movies from './components/Movies'
-import Home from './components/Home'
-import TV from './components/Tv'
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.css";
+import Movies from "./components/Movies";
+import Home from "./components/Home";
+import TV from "./components/Tv";
+import Games from "./components/Games";
 
 function App() {
   return (
     <div className="App">
-      
       <Router>
-          <Route exact path="/" component={Home} />
-          <Route path="/movies" component={Movies} /> 
-          <Route path="/tv" component={TV} />
-          {/* <Route path="/games" component={Games} />   
-          <Route path="/books" component={Books} />   
+        <Route exact path="/" component={Home} />
+        <Route path="/movies" component={Movies} />
+        <Route path="/tv" component={TV} />
+        <Route path="/games" component={Games} />
+        {/*<Route path="/books" component={Books} />   
           <Route path="/sites" component={Sites} />   
           <Route path="/reviews" component={Reviews} />   
           <Route path="/archives" component={Archives} /> 
