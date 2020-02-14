@@ -24,22 +24,22 @@
     color: #64d6dd;
  }
  
- .inlineLinks {
+ .games_inlineLinks {
      position: absolute;
      bottom: 5%;
      
  }
  
- .inlineLinks li {
+ .games_inlineLinks li {
      display: inline;
  }
  
- li:nth-child(4),
- li:nth-child(7) {
+ .games_inlineLinks li:nth-child(4),
+ .games_inlineLinks li:nth-child(7) {
      display: none;
  }
  
- .inlineLinks li a {
+ .games_inlineLinks li a {
      font-size: 1.25em;
      margin: 0 2%;
      color: #64d6dd;
@@ -47,7 +47,7 @@
      opacity: 1;
  }
  
- .inlineLinks li a:hover {
+ .games_inlineLinks li a:hover {
      color: #39ff14;
      color: #dbe7d5;
      /* color: #64d6dd; */

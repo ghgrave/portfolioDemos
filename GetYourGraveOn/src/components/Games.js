@@ -21,7 +21,7 @@ function Games() {
       </Row>
       <Row></Row>
       <Row>
-        <Col className="inlineLinks">
+        <Col className="games_inlineLinks">
           <NavLinks className="remove" />
           <NavbarComp id="navbarComp" />
         </Col>
