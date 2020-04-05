@@ -1,0 +1,17 @@
+{
+  "name": "corona",
+  "version": "1.0.0",
+  "description": "This is an attempt to take data displayed on Github and using built-in Node modules, can I  get the data and display in browser.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^2.3.2",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1"
+  }
+}
