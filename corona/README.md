@@ -2,7 +2,12 @@ This is an attempt to take data displayed on Github and using built-in Node modu
 get the data and display in browser.
 
 
-1) 4/5/2020 - able to pull data and save locally. Able to read the data using built-in Node functionality and display using EJS templating.
+1) 4/5/2020 
+    - able to pull data and save locally. Able to read the data using built-in Node functionality and display using EJS templating. 
+    - Added partials for better organization
+    - added styling
+    - added date functionality to let user know current date and when data was pulled
+    - temporarily moved .csv file to local directory
 
 
 TODO:
