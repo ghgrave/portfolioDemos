@@ -10,11 +10,16 @@ app.set('view engine', 'ejs')
 const port = process.env.PORT || 3000
 const url = '../../covid-19-data/us-states.csv'
 const months = require('./helpers') // array of month names
+const d = new Date()
+const date = `${months.months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}<br>`
 
 app.get('/', (req, res)=>{
-   let d = new Date()
-   res.render('home', {date: 
-      `${months.months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}<br>`})
+   // let d = new Date()
+   res.render('home', {date})
+})
+
+app.get('/sortData', (req, res)=>{
+   res.redirect(`${req.query.sortBy}`)
 })
 
 app.get('/date', (req, res)=>{
@@ -26,7 +31,7 @@ app.get('/date', (req, res)=>{
   })
   .on('end', () => {
     console.log('CSV file successfully processed');
-    res.render('date', {data})
+    res.render('date', {data, date})
   });
 })
 

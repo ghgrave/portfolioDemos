@@ -1,8 +1,7 @@
-<%- include('partials/header')  %> 
+<%- include('partials/header', {date})  %> 
 
   
       <h1>COVID-19 data by date</h1>
-      <h6>RESOURCE: Data from The New York Times, based on reports from state and local health agencies.</h6>
     <% let header = Object.keys(data[0]) %>
     <table>
       <thead>

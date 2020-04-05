@@ -7,6 +7,25 @@ th::first-letter {
   text-transform: capitalize;
 }
 
+table thead tr{
+  display:block;
+}
+
+table th,
+table td{
+  width:100px;
+}
+
+table  tbody{
+  display:block;
+  height: 35vh;
+  overflow:auto;
+}
+
+tbody tr:nth-child(even) {
+  background: lightgrey;
+}
+
 #dateDisplay,
 #copy {
   font-size: .75em;
