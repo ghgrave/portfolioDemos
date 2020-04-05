@@ -8,6 +8,9 @@ get the data and display in browser.
     - added styling
     - added date functionality to let user know current date and when data was pulled
     - temporarily moved .csv file to local directory
+    - fixed styling for table with fixed header position
+    - created form partial
+    - new routes based on user input for data organization
 
 
 TODO:
