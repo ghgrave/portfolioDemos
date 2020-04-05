@@ -11,6 +11,7 @@ get the data and display in browser.
     - fixed styling for table with fixed header position
     - created form partial
     - new routes based on user input for data organization
+    - built sort function in helpers.js that allows sorting by state
 
 
 TODO:
