@@ -2,3 +2,13 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
   }
+
+th::first-letter {
+  text-transform: capitalize;
+}
+
+#dateDisplay,
+#copy {
+  font-size: .75em;
+  font-weight: bold;
+}

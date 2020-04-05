@@ -5,12 +5,19 @@ const fs = require('fs')
 const csv = require('csv-parser')
 
 app.use(express.static('public'))
+app.set('view engine', 'ejs')
 
 const port = process.env.PORT || 3000
-
 const url = '../../covid-19-data/us-states.csv'
+const months = require('./helpers') // array of month names
 
 app.get('/', (req, res)=>{
+   let d = new Date()
+   res.render('home', {date: 
+      `${months.months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}<br>`})
+})
+
+app.get('/date', (req, res)=>{
    let data = []
    fs.createReadStream(url)
   .pipe(csv())
@@ -19,7 +26,7 @@ app.get('/', (req, res)=>{
   })
   .on('end', () => {
     console.log('CSV file successfully processed');
-    res.render('home.ejs', {data})
+    res.render('date', {data})
   });
 })
 

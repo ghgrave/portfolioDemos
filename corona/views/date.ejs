@@ -1,0 +1,27 @@
+<%- include('partials/header')  %> 
+
+  
+      <h1>COVID-19 data by date</h1>
+      <h6>RESOURCE: Data from The New York Times, based on reports from state and local health agencies.</h6>
+    <% let header = Object.keys(data[0]) %>
+    <table>
+      <thead>
+        <tr>
+          <% header.forEach(el => { %>
+          
+            <th><%= el %></th>
+          <% }) %>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i = 1; i < data.length; i++){%>
+        <tr>
+          <% header.forEach(el => { %>
+          <td><%= data[i][el] %></td>
+          <% }) %>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+<%- include ('partials/footer') %> 
