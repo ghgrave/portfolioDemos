@@ -13,12 +13,12 @@ table thead tr{
 
 table th,
 table td{
-  width: 150px;
+  width: 10rem;
 }
 
 table  tbody{
   display:block;
-  height: 35vh;
+  height: 45vh;
   overflow:auto;
 }
 

@@ -12,6 +12,7 @@ get the data and display in browser.
     - created form partial
     - new routes based on user input for data organization
     - built sort function in helpers.js that allows sorting by state
+    - sort function now collects data and aggregates for each state with total of deaths per state
 
 
 TODO:
