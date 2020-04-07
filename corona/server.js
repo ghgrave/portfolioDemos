@@ -44,7 +44,11 @@ app.get("/sortData", (req, res) => {
 });
 
 app.get("/date", (req, res) => {
-  res.render("date", { data, date:today });
+  let newData = helperData.dataSort(data, true, 'date', prevDay)
+  res.render("date", { date:today,
+                      data,
+                      totalCases: newData[1], 
+                      totalDeaths: newData[2] });
 });
 
 app.get("/state", (req, res) => {

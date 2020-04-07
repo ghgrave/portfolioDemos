@@ -21,6 +21,7 @@ get the data and display in browser.
     - able to use moment to get accurate date formatiing
     - built filter function for state sort using moment data
     - added total cases and total deaths to state.ejs
+    - fixed data being sent to date page with total deaths and cases
 
 TODO:
 
