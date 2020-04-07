@@ -18,6 +18,9 @@ get the data and display in browser.
     - realized data was aggegating for deaths instead of updating for each line of deaths by state by date
     - need to redo logic so only the last date reported is used instead of adding all death counts.
     - installed moment.js for date formatting
+    - able to use moment to get accurate date formatiing
+    - built filter function for state sort using moment data
+    - added total cases and total deaths to state.ejs
 
 TODO:
 

@@ -2,6 +2,7 @@
 
   
       <h1>COVID-19 data by state</h1>
+      <p>Total Cases: <%= totalCases %>  &nbsp; Total Deaths: <%= totalDeaths %> &nbsp; Death Rate: <%= ((totalDeaths/totalCases)*100).toFixed(2) %> </p>
     <% let header = Object.keys(data[0]) %>
     <table>
       <thead>

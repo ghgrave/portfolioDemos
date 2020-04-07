@@ -7,9 +7,9 @@ const csv = require("csv-parser");
 const moment = require('moment')
 const now = moment()
 const today = now.format("ddd MMM DD, YYYY")
-const yesterday = now.subtract(1, 'day').format("YYYY-MM-DD")
+const prevDay = now.subtract(1, 'day').format("YYYY-MM-DD")
 
-console.log(today, yesterday)
+console.log(today, prevDay)
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/sortData", (req, res) => {
-  res.redirect(`${req.query.sortBy}`);
+  res.redirect(`/${req.query.sortBy}`);
 });
 
 app.get("/date", (req, res) => {
@@ -48,7 +48,11 @@ app.get("/date", (req, res) => {
 });
 
 app.get("/state", (req, res) => {
-  res.render("state", { data: helperData.dataSort(data, true, 'state'), date: today });
+  let newData = helperData.dataSort(data, true, 'state', prevDay)
+  res.render("state", { date: today,
+                        data: newData[0],
+                        totalCases: newData[1], 
+                        totalDeaths: newData[2]});
 });
 
 app.listen(port, () => {

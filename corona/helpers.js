@@ -2,7 +2,7 @@
 
 exports.months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-exports.dataSort = (data, flag, sortBy) => {
+exports.dataSort = (data, flag, sortBy, prevDay) => {
     console.log('Receiving data from server.js')
     console.log('Sorting data....')
     let selection = sortBy
@@ -16,21 +16,20 @@ exports.dataSort = (data, flag, sortBy) => {
           : 0;
         });
         const unique = [...new Set(byState.map(item => item.state))]
-        tempStateArray = []
+        let [tempStateArray, tempCases, tempDeaths] = [[], 0, 0]
         unique.forEach(el => {
-            // let tempObj = {}
-            let [deathCount, cases, tempObj, fips] = [0, 0, {}, 0];
-            byState.forEach(el2 => {
-                // return el2 === el && el2.date === '1'
-                deathCount = (el2.state === el) ? deathCount + Number(el2.deaths) : deathCount + 0;
-                cases = (el2.state === el) ? cases + Number(el2.cases) : cases + 0;
+            let tempObj = {}
+             let test = byState.filter(el2 => {
+                return el2.state === el && el2.date === prevDay
             })
+            tempCases = tempCases + Number(test[0].cases)
+            tempDeaths = tempDeaths + Number(test[0].deaths)
+            tempObj.date = prevDay
             tempObj.state = el;
-            // tempObj.fips = 0;
-            tempObj.cases = cases;
-            tempObj.deaths = deathCount;
-            tempObj.deathRate = ((deathCount/cases) * 100).toFixed(2);
+            tempObj.cases = test[0].cases;
+            tempObj.deaths = test[0].deaths;
+            tempObj.deathRate = ((test[0].deaths/test[0].cases) * 100).toFixed(2);
             tempStateArray.push(tempObj)
         })
-    return byState = tempStateArray;
+    return [tempStateArray, tempCases, tempDeaths];
 }
