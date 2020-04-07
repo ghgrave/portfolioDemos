@@ -14,9 +14,14 @@ get the data and display in browser.
     - built sort function in helpers.js that allows sorting by state
     - sort function now collects data and aggregates for each state with total of deaths per state
 
+1) 4/6/2020
+    - realized data was aggegating for deaths instead of updating for each line of deaths by state by date
+    - need to redo logic so only the last date reported is used instead of adding all death counts.
+    - installed moment.js for date formatting
 
 TODO:
 
 1) How do I add user functionality to each column for better sorting.
 1) How do I pull data from Github automatically instead of manually every during run time
 1) Convert to React at some point for better practice
+1) Move date functions to helper.js?

@@ -18,8 +18,10 @@ exports.dataSort = (data, flag, sortBy) => {
         const unique = [...new Set(byState.map(item => item.state))]
         tempStateArray = []
         unique.forEach(el => {
+            // let tempObj = {}
             let [deathCount, cases, tempObj, fips] = [0, 0, {}, 0];
             byState.forEach(el2 => {
+                // return el2 === el && el2.date === '1'
                 deathCount = (el2.state === el) ? deathCount + Number(el2.deaths) : deathCount + 0;
                 cases = (el2.state === el) ? cases + Number(el2.cases) : cases + 0;
             })
