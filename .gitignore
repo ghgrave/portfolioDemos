@@ -64,4 +64,5 @@ typings/
 .vscode
 
 config.js
-
+build
+NOTES
