@@ -15,28 +15,22 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 const port = process.env.PORT || 3000;
 const url = "../../covid-19-data/us-states.csv";
-const helperData = require("./helpers"); // array of month names
-// const dataSort = require('./helpers')
-// const d = new Date();
-// const date = `${d.toDateString()}<br>`;
+// const url = "https://github.com/nytimes/covid-19-data/";
+const helperData = require("./helpers"); // array of month names TODO: use momentjs?
+const data = []
 
-
-
-let data = [];
-fs.createReadStream(url)
-  .pipe(csv())
-  .on("data", (row) => {
-    data.push(row);
-  })
-  .on("end", () => {
-    console.log("CSV file successfully processed");
-    console.log('Sending data to helpers.js file')
-   //  let dataByState = helperData.dataSort(data, true)
-  });
 
 app.get("/", (req, res) => {
-  // let d = new Date()
-  res.render("home", { date: today });
+    fs.createReadStream(url)
+    .pipe(csv())
+    .on("data", (row) => {
+      data.push(row);
+    })
+    .on("end", () => {
+      console.log("CSV file successfully processed");
+      console.log('Sending data to helpers.js file')
+    });
+    res.render("home", { date: today });
 });
 
 app.get("/sortData", (req, res) => {

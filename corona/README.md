@@ -29,3 +29,4 @@ TODO:
 1) How do I pull data from Github automatically instead of manually every during run time
 1) Convert to React at some point for better practice
 1) Move date functions to helper.js?
+1) Revamp months array using moment.js
