@@ -1,0 +1,28 @@
+<%- include('partials/header.ejs', {title: 'Random Data File Maker- Results'}) %>
+
+<body id='results-page'>
+    <div class="container-fluid ">
+        <h1 class='text-center'>Results Page</h1>
+        <div id="table_container">
+            <table style="height: 100px" class="table table-hover table-striped table-bordered" >
+                <thead class="thead-dark">
+                    <tr>
+                        <% for(key in data[0]){ %>
+                            <th class="text-uppercase"><%= key %></th>
+                        <% } %>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(obj => { %>
+                        <tr>
+                            <% for(key in obj){ %>
+                                <td><%= obj[key] %></td>
+                            <% } %>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<%- include('partials/footer.ejs') %>

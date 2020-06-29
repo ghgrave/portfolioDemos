@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: lightblue;
+}
+
+.card {
+  display: inline-block;
+  box-shadow: 3px 3px 10px black;
+}
+
+.form-check-input {
+  height: 1em;
+  width: 1em;
+}
+
+#table_container {
+  overflow: auto;
+  border: darkgrey 10px ridge;
+  height: 85vh;
+  box-shadow: 5px 5px 10px black;
+}
+
+thead,
+th {
+  position: sticky;
+  top: 0;
+}
