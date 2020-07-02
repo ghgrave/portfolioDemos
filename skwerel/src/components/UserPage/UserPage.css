@@ -24,6 +24,13 @@
   text-align: center;
 }
 
+#userPage_container h4 {
+  font: bold 1.25em "Henny Penny", serif;
+  text-shadow: 1px 1px 10px white, 6px 6px 10px darkgreen;
+  color: black;
+  text-align: center;
+}
+
 #userPage_container input {
   display: block;
   line-height: 48px;
@@ -51,12 +58,59 @@
   font-size: 1em;
 }
 
-#userPage_container .mediaBox {
-  border: white ridge 20px;
-  margin: 50px auto 10px;
+#userPage_container #media_container {
+  background: #372449;
+  border: white 2px solid;
+  height: 88vh;
+  overflow: auto;
+}
+
+#userPage_container .newsBox {
+  background: white;
+  border: white ridge 2px;
+  margin: 20px auto;
   box-shadow: 0px -1px 10px 6px #372449;
-  height: 33vh;
+  height: 10vh;
   width: 90%;
+  overflow: auto;
+  font-size: 0.75em;
+}
+
+#userPage_container .mediaBox {
+  background: white;
+  border: white ridge 2px;
+  margin: 10px auto;
+  box-shadow: 0px -1px 10px 6px #372449;
+  height: 25vh;
+  width: 90%;
+}
+
+#userPage_container a {
+  color: black;
+}
+
+#userPage_container a:hover {
+  text-decoration: none;
+  text-shadow: 1px 1px 0 black, 1px 1px 10px white, 6px 6px 10px darkgreen;
+}
+
+#calendar_container {
+  border: white solid 2px;
+  height: 50vh;
+  box-shadow: 0px -1px 10px 6px #372449;
+}
+
+#calendar {
+  width: 100%;
+  border: red solid 1px;
+  height: 100%;
+  background: #372449;
+}
+
+#upcoming_container {
+  border: white solid 2px;
+  height: 25vh;
+  box-shadow: 0px -1px 10px 6px #372449;
 }
 
 @media (max-width: 599px) {
