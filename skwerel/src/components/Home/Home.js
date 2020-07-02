@@ -1,13 +1,13 @@
 import React from 'react';
 
-import {background_image} from './helpers';
+import {background_image} from '../../helpers';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Background from '../src/images/skwerel-logo-1280-shadow.svg';
-import OakTree from "../src/images/oakTree.png"
+import Button from 'react-bootstrap/Button'
+import Background from '../../images/skwerel-logo-1280-shadow.svg';
+import OakTree from "../../images/oakTree.png"
 import './Home.css';
 
 background_image.background = `#372449 url(${Background}) center bottom no-repeat`;
@@ -15,14 +15,15 @@ background_image.background = `#372449 url(${Background}) center bottom no-repea
 
 function Home() {
   return (
-    <Container fluid={true}>
+    <Container fluid={true} id='home_container'>
       <Row>
         <Col lg={3} >
-          <form id='loginForm' action="">
+          <form id='loginForm' className='text-center' action="">
             <label htmlFor="username"></label>
             <input type="text" name="username" id="username" placeholder='username' autoComplete='off'/>
             <label htmlFor="password"></label>
             <input type="password" name="password" id="password" placeholder='password'/>
+            <Button type='submit' variant='success' className='btn-lg mt-2'>SUBMIT</Button>
           </form>
         </Col>
         <Col lg={6} style={background_image}>
