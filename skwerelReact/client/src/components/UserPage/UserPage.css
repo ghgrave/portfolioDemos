@@ -95,14 +95,13 @@
 }
 
 #calendar_container {
-  border: white solid 2px;
-  height: 50vh;
+  border: white ridge 2px;
+  height: 75vh;
   box-shadow: 0px -1px 10px 6px #372449;
 }
 
 #calendar {
   width: 100%;
-  border: red solid 1px;
   height: 100%;
   background: #372449;
 }

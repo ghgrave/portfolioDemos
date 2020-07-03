@@ -1,5 +1,6 @@
 #home_container {
   background-color: darkgreen;
+  height: 100vh;
 }
 
 #home_container h1 {

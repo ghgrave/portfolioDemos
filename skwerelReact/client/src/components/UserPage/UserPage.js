@@ -1,4 +1,5 @@
 import React from "react";
+import CalendarComp from "../Calendar/Calendar";
 import { Link } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
@@ -62,16 +63,16 @@ function UserPage() {
           </div>
         </Col>
         <Col lg={6} style={background_image}>
-          <h1>UserPage</h1>
+          <h1>gHgrave</h1>
           <div id="calendar_container">
             <div id="calendar">
-              <h3>Calendar</h3>
+              <CalendarComp />
             </div>
           </div>
-          <h4 className='mt-1'>Upcoming:</h4>
-          <div className='mt-1' id="upcoming_container">
-              <div id="upcoming"></div>
-          </div>
+          {/* <h4 className="mt-1">Upcoming:</h4>
+          <div className="mt-1" id="upcoming_container">
+            <div id="upcoming"></div>
+          </div> */}
         </Col>
         <Col lg={3}>
           <h3>
