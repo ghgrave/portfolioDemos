@@ -5,9 +5,11 @@
 }
 
 #calendar button {
+    font: bold 0.6em "Henny Penny", serif;
   background: darkgreen;
   color: white;
   text-shadow: 2px 2px 0 black;
+  width: 7em;
 }
 
 .rbc-toolbar,
