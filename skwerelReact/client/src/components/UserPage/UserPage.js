@@ -26,15 +26,16 @@ function UserPage() {
     axios
       .get("/user/newsfeed")
       .then((response) => {
-       
         const displayNewsfeed = response.data.map((data, index) => {
           return (
-            <div key={index} className="newsBox">
-              <a  href={data.link} target='_blank'>{data.title}</a>
+            <div key={index} className="newsBox text-center">
+              <a href={data.link} target="_blank">
+                {data.title}
+              </a>
             </div>
           );
         });
-        setNewsfeed(displayNewsfeed) 
+        setNewsfeed(displayNewsfeed);
       })
       .catch();
   }, []);
@@ -44,9 +45,7 @@ function UserPage() {
       <Row>
         <Col lg={3}>
           <h3>Newsfeed</h3>
-          <div id="media_container">
-            {newsfeed}
-          </div>
+          <div id="media_container">{newsfeed}</div>
         </Col>
         <Col lg={6} style={background_image}>
           <h1>gHgrave</h1>
