@@ -1,17 +1,27 @@
-import React from "react";
-import CalendarComp from "../Calendar/Calendar";
+import React, {useState, useEffect} from "react";
+import CalendarComp from "../Calendar/Calendar"
 import { Link } from "react-router-dom";
+
+import DATA from '../../utils/data/fakeData'
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { background_image } from "../../utils/helpers";
-
+import { background_image } from "../../utils/data/helpers";
 import "./UserPage.css";
 
 background_image.background = `initial`;
 
 function UserPage() {
+  const [events, setEvents] = useState([])
+
+  useEffect(()=> {
+    console.log(DATA.data)
+    setEvents(DATA.data)
+  },[])
+
+
+
   return (
     <Container fluid={true} id="userPage_container">
       <Row>
@@ -66,7 +76,7 @@ function UserPage() {
           <h1>gHgrave</h1>
           <div id="calendar_container">
             <div id="calendar">
-              <CalendarComp />
+              <CalendarComp events={events}/>
             </div>
           </div>
           {/* <h4 className="mt-1">Upcoming:</h4>

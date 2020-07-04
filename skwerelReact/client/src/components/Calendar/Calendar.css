@@ -1,65 +1,28 @@
-#calendar {
-  /* font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; */
+#calendar_container #calendar {
   font: bold 0.75em "Henny Penny", serif;
-  
+  color: white;
 }
 
 #calendar button {
-    font: bold 0.6em "Henny Penny", serif;
+  font: bold 1em "Henny Penny", serif;
   background: darkgreen;
   color: white;
   text-shadow: 2px 2px 0 black;
   width: 7em;
 }
 
-.rbc-toolbar,
-.rbc-header,
-.rbc-date-cell {
+#calendar_container #calendar a {
+  font-size: 1em;
   color: white;
-  
+  text-shadow: 1px 1px 3px black;
 }
-
-.rbc-event {
-  border: none;
-  box-sizing: border-box;
-  box-shadow: none;
-  margin: 0;
-  padding: 2px 5px;
-  background-color: green;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-}
-
-.rbc-event-content {
-  font-size: 0.75em;
-  text-shadow: 1px 2px 0 black;
-}
-
-.rbc-show-more:hover {
-    text-shadow: none;
-}
-
-/* .rbc-day-bg.rbc-today {
-    background-color: #c383ff;
+/* 
+#calendar .fc-view {
+  margin-top: -2%;
+  height: 100%;
 } */
 
-.rbc-off-range-bg {
-    background-color: #c383ff;
-}
-
-.rbc-label {
-    color: white;
-    text-shadow: 1px 1px 0 black, 6px 6px 10px darkgreen;
-}
-
-#calendar td {
-    color: white;
-    text-shadow: 2px 2px 0 black;
-}
-
-.rbc-agenda-empty {
-    color: white;
+.tv-content {
+  background-color: red;
+  color: red;
 }

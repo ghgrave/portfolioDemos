@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 
 import Background from "../../images/skwerel-logo-1280-shadow.svg";
 import OakTree from "../../images/oakTree.png";
-import { background_image } from "../../utils/helpers";
+import { background_image } from "../../utils/data/helpers";
 import "./Home.css";
 
 // background_image.background = `#372449 url(${Background}) center bottom no-repeat`;
@@ -57,7 +57,7 @@ function Home(props) {
     event.preventDefault();
     props.history.push("/user");
   };
-  
+
   return (
     <Container fluid={true} id="home_container">
       <Row>
