@@ -14,30 +14,26 @@ import "./UserPage.css";
 background_image.background = `initial`;
 
 function UserPage() {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState(DATA.data);
   const [newsfeed, setNewsfeed] = useState([]);
+  const [newsTest, setNewsTest] = useState([])
 
-  useEffect(() => {
-    console.log(DATA.data);
-    setEvents(DATA.data);
-  }, []);
-
-  useEffect(() => {
+  useEffect(()=>{
     axios
       .get("/user/newsfeed")
       .then((response) => {
         const displayNewsfeed = response.data.map((data, index) => {
           return (
             <div key={index} className="newsBox text-center">
-              <a href={data.link} target="_blank">
+              <a href={data.link} target="_blank" rel="noopener noreferrer">
                 {data.title}
               </a>
             </div>
           );
         });
-        setNewsfeed(displayNewsfeed);
+        setNewsfeed(displayNewsfeed)
       })
-      .catch();
+      .catch(err => console.log(err));
   }, []);
 
   return (
