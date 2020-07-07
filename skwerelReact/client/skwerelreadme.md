@@ -8,3 +8,5 @@
 #### How would you like to get auto reminders as events get closer? Or even auto set-up recording devices?
 
 1/3/20 - First attempt at creating a new app that will allow users to search for movies and tv shows and save to a personalized watchlist. User can then add to a calender, delete, etc... as needed
+
+7/6/2020 - Managed to build a web scraper using cheerio that grabs articles from marvel.com and only displays those that are within the last 6 days of publications. It also sorts those in order from newest to last. 
