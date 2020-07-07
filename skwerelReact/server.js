@@ -9,7 +9,7 @@ const chalk = require("chalk");
 const log = console.log;
 
 const { marvel } = require("./utils/marvel");
-const { marvelDates } = require("./utils/marvel");
+// const { marvelDates } = require("./utils/marvel");
 
 app.use(logger("dev"));
 // app.use(bodyParser.urlencoded({extended: false}))
@@ -21,7 +21,11 @@ app.get("/", (req, res) => res.send("I am the root route"));
 
 app.get("/user/newsfeed", (req, res, next) => {
   marvel
-    .then((data) => res.json(data))
+    .then((data) => {
+      // joins the date array into a string
+      data.forEach(el => el.date = el.date.join(' '))
+      res.json(data)
+    })
     .catch((err) =>
       res
         .status(411)

@@ -25,9 +25,13 @@ function UserPage() {
         const displayNewsfeed = response.data.map((data, index) => {
           return (
             <div key={index} className="newsBox text-center">
+              <p className='date-label mt-1'>{data.date}</p>
+              <p className='title-label'>{data.title}</p>
               <a href={data.link} target="_blank" rel="noopener noreferrer">
-                {data.title}
+                <p className='mt-1 description-label'>{data.description}</p>
               </a>
+              
+
             </div>
           );
         });
