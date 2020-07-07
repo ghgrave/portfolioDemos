@@ -63,6 +63,7 @@
   border: white 2px solid;
   height: 88vh;
   overflow: auto;
+  box-shadow: -5px 0 30px black;
 }
 
 #userPage_container .newsBox {
@@ -79,19 +80,30 @@
 #userPage_container .newsBox .date-label {
   font: bold 1.25em "Henny Penny", serif;
   font-weight: bold;
+  text-shadow: 0 0 5px white;
+  border: black solid 3px;
+  border-radius: 25%;
+  background-color: darkgreen;
+  width: 75%;
+  margin: 0 auto;
 }
 
 #userPage_container .newsBox .title-label {
   font-weight: bold;
 }
 
+#userPage_container .newsBox button {
+  text-shadow: 1px 1px black;
+}
+
 #userPage_container .newsBox:hover{
   background: darkgreen;
-  font-weight: bold;
+
 }
 
 #userPage_container .newsBox a:hover {
   text-shadow: 0 0 10px white;
+  font-weight: bold;
 }
 
 #userPage_container .mediaBox {
