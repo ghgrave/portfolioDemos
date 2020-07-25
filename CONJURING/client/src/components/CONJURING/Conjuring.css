@@ -1,0 +1,91 @@
+body {
+  background: linear-gradient(darkred, black);
+  height: 100vh;
+}
+
+#conjuring_container {
+  color: white;
+  font-family: "Rye", cursive;
+}
+
+#conjuring_container h1 {
+  text-shadow: 1px 1px 0 black;
+  font-size: 3em;
+}
+
+#phrase_container {
+  border: 1px solid white;
+  height: 35vh;
+  width: 100%;
+  margin: 0 auto;
+  letter-spacing: 10px;
+}
+
+.phraseLetters {
+  display: inline-block;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 0 black;
+  font-stretch: expanded;
+}
+
+#alpha_container {
+  height: 53vh;
+  width: 63vh;
+  margin: 0 auto;
+  padding: .25em;
+  animation-name: backgroundChange;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+/* candle flam effect */
+@keyframes backgroundChange {
+    0% {background-image: repeating-radial-gradient(orange, white, yellow);}
+    10% {background-image: repeating-radial-gradient( white, yellow, orange);}
+    20% {background-image: repeating-radial-gradient( orange, white, yellow);}
+    30% {background-image: repeating-radial-gradient( yellow, orange, white);}
+    40% {background-image: repeating-radial-gradient( yellow, white, orange);}
+    50% {background-image: repeating-radial-gradient( white, yellow, orange);}
+    60% {background-image: repeating-radial-gradient( orange, white, yellow);}
+    70% {background-image: repeating-radial-gradient( yellow, orange, white);}
+    80% {background-image: repeating-radial-gradient( orange, white, yellow);}
+    90% {background-image: repeating-radial-gradient(yellow, orange, yellow);}
+    100% {background-image: repeating-radial-gradient(orange, white, yellow);}
+}
+
+#inner_container {
+  height: 52vh;
+  width: 62vh;
+  background-image: linear-gradient(darkred, black);
+  background-size: cover;
+  margin: 0 auto 0;
+  padding-top: 18vh;
+  animation-name: innerChange;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.alphaBoxes {
+  font-size: 1.5em;
+  display: inline-block;
+  margin: 3%;
+  cursor: pointer;
+  text-shadow: 2px 2px black, 0 0 10px white;
+}
+
+#image_container #demonImg {
+  width: 60%;
+  height: 100%;
+  box-shadow: 0 0 5px white, 0 0 100px red;
+}
+
+.red {
+  color: darkred;
+  cursor: initial;
+}
+
+.pentagon {
+  -webkit-clip-path: polygon(50% 0%, 100% 40%, 82% 100%, 18% 100%, 0% 40%);
+  clip-path: polygon(50% 0%, 100% 40%, 82% 100%, 18% 100%, 0% 40%);
+}
