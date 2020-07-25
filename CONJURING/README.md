@@ -14,3 +14,4 @@ TODO:
 1) need to add more demon images
 1) set up function that randomizes the phrases
 1) user needs to be able to slect easy, medium, hard levels
+1) maybe use a ouija board as a background for the letters

@@ -16,11 +16,8 @@ const Conjuring = () => {
   const [displayAlphabet, setDisplayAlphabet] = useState(<p></p>);
   const [alphabetArray, setAlphabetArray] = useState(alpha.toUpperCase().split(""));
 
-  const displayMaskedPhrase =(phrase) => {
-    phrase = phrase.split('')
-    let displayPhrase = phrase.map((letter, index)=>{
-      console.log(letter)
-    })
+  const handleSolveClick = () => {
+    console.log('Click!!!!')
   }
 
   const handleLetterClick = (event) => {
@@ -31,7 +28,6 @@ const Conjuring = () => {
     let chosenLetter = event.target.dataset.letter;
     if(alphabetArray.includes(chosenLetter)){
       setMaskedPhrase(replaceGuessedLetters(chosenLetter, tempPuzzle, maskedPhrase))
-      displayMaskedPhrase(maskedPhrase)
       setAlphabetArray(alphabetArray.filter((el) => el !== chosenLetter));
     } else {
       console.log('Need to choose another letter')
@@ -68,16 +64,11 @@ const Conjuring = () => {
     <div className="container-fluid" id="conjuring_container">
       <div className="row">
         <div className="col text-center">
-          <h1 className="mb-4">The Conjuring</h1>
+          <h1 className="m-4">The Conjuring</h1>
         </div>
       </div>
-      <main className="row" id="main_container">
-        <div className="col-lg-5 my-3 text-center" id="image_container">
-          <img src={demon1} alt="demon" id="demonImg" className="" />
-        </div>
-        <div className="col-lg-7">
-          <div className="row" id="phrase_container">
-            <div className="col">
+      <div className="row" id="phrase_container">
+            <div className="col text-center pt-4">
               {maskedPhrase.split('').map((letter, i)=> {
                 return letter.charCodeAt() === 32
                 ? <p className='phraseLetters' key={i}>&nbsp;&nbsp;</p>
@@ -85,14 +76,28 @@ const Conjuring = () => {
                 })
               }
             </div>
-          </div>
-          <div className="row pentagon" id="alpha_container">
+      </div>
+      <main className="row" id="main_container">
+        <div className="col my-3 text-center" id="image_container">
+          <img src={demon1} alt="demon" id="demonImg" className="" />
+        </div>
+        <div className="col text-center">
+          <div className="row pentagon mt-2" id="alpha_container">
             <div className='pentagon' id="inner_container">
               <div className="col text-center">{displayAlphabet}</div>
             </div>
           </div>
         </div>
+        <div className="col my-3 text-center" id="solve_container">
+          <form className='mt-5'>
+            <textarea className='mt-5' name="guessPuzzle" id="" cols="30" rows="3"></textarea>
+            <br/>
+            <button className="btn btn-success btn-lg mt-2" onClick={handleSolveClick}>Solve</button>
+          </form>
+
+        </div>
       </main>
+      
     </div>
   );
 };
