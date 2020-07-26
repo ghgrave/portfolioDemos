@@ -10,14 +10,42 @@ import background1 from "../../assets/images/background1.jpg";
 
 const Conjuring = () => {
 
-  const [maskedPhrase, setMaskedPhrase] = useState(maskPhrase(phrase.quotes[1]))
-  const [tempPuzzle, setTempPuzzle] = useState(phrase.quotes[1])
+  const initialState = {
+    guess: ''
+  }
+
+  // const [maskedPhrase, setMaskedPhrase] = useState(maskPhrase(phrase.quotes[1]))
+  const [maskedPhrase, setMaskedPhrase] = useState(maskPhrase(phrase.books[0]))
+  // const [tempPuzzle, setTempPuzzle] = useState(phrase.quotes[1])
+  const [tempPuzzle, setTempPuzzle] = useState(phrase.books[0])
   const [alphabetArrayObj, setAlphabetArrayObj] = useState(resetAlphabet(alpha));
   const [displayAlphabet, setDisplayAlphabet] = useState(<p></p>);
   const [alphabetArray, setAlphabetArray] = useState(alpha.toUpperCase().split(""));
+  const [guess, setGuess] = useState(initialState)
+  const [gameOver, setGameOver] = useState('')
 
-  const handleSolveClick = () => {
-    console.log('Click!!!!')
+  const resetGuess = () => {
+    setGameOver('')
+    setGuess(initialState)
+    console.log(guess)
+    console.log('Reset?')
+  }
+  const handleSolveSubmit = (event) => {
+    event.preventDefault()
+    if(guess.guess.toUpperCase() === tempPuzzle.toUpperCase()){
+      console.log('Winner')
+    } else {
+      console.log('Loser!!!')
+    }
+    resetGuess()
+    
+  }
+
+  const handleSolveChange = (event) => {
+    setGuess({...guess, 
+          [event.target.name] :event.target.value})
+
+    
   }
 
   const handleLetterClick = (event) => {
@@ -33,6 +61,10 @@ const Conjuring = () => {
       console.log('Need to choose another letter')
     }
   };
+
+  useEffect(()=>{
+    console.log('GUESS!!!')
+  }, [guess])
 
   // componentDidUpdate
   // sets alpha array to only those letters NOT chosen
@@ -57,8 +89,10 @@ const Conjuring = () => {
     });
     setDisplayAlphabet(newData)
   }, [alphabetArrayObj, maskedPhrase]); //maskedPhrase required in order to 'save' state
-    let test1 =[]
-    const test = maskedPhrase.split('').forEach((letter)=> test1.push(<p className='phraseLetters' >{letter}</p>))
+
+
+    // let test1 =[]
+    // const test = maskedPhrase.split('').forEach((letter)=> test1.push(<p className='phraseLetters' >{letter}</p>))
 
   return (
     <div className="container-fluid" id="conjuring_container">
@@ -89,12 +123,11 @@ const Conjuring = () => {
           </div>
         </div>
         <div className="col my-3 text-center" id="solve_container">
-          <form className='mt-5'>
-            <textarea className='mt-5' name="guessPuzzle" id="" cols="30" rows="3"></textarea>
+          <form className='mt-5' method='POST'>
+            <textarea className='mt-5' name="guess" id="" cols="30" rows="3" value={guess.solution} onChange={handleSolveChange}></textarea>
             <br/>
-            <button className="btn btn-success btn-lg mt-2" onClick={handleSolveClick}>Solve</button>
+            <button className="btn btn-success btn-lg mt-2" onClick={handleSolveSubmit}>Solve</button>
           </form>
-
         </div>
       </main>
       
