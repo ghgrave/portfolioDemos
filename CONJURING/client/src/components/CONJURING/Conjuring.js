@@ -36,7 +36,7 @@ const Conjuring = () => {
     alphabetArrayObj.forEach((el, i) => {
       newData.push(
         <p
-          className="alphaBoxes"
+          className="blue"
           key={i}
           data-letter={el.letter}
           data-hidden={true}
@@ -45,6 +45,7 @@ const Conjuring = () => {
         </p>
       );
     });
+    console.log('New data: ', newData)
     setDisplayAlphabet(newData)
   }
 
@@ -85,7 +86,7 @@ const Conjuring = () => {
   // sets alpha array to only those letters NOT chosen
   useEffect(()=>{
     setAlphabetArray(alphabetArray)
-  }, [alphabetArray])
+  }, [alphabetArray, displayAlphabet])
 
   // componentDidUpdate
   useEffect(() => {
@@ -93,8 +94,8 @@ const Conjuring = () => {
     alphabetArrayObj.forEach((el, i) => {
       newData.push(
         <p
-          // className={el.available ? "alphaBoxes" : "alphaBoxes red"}
-          className= "alphaBoxes"
+          className={el.available ? "alphaBoxes" : "alphaBoxes red"}
+          // className= "alphaBoxes"
           key={i}
           data-letter={el.letter}
           data-hidden={true}
