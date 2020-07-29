@@ -1,3 +1,25 @@
+const sortedPhraseObj = {
+  acolyte: [],
+  priest: [],
+  necromancer: []
+}
+
+export const sortPhrases = (phrase) => {
+  Object.keys(phrase).forEach(el => {
+    phrase[el].forEach(element => {
+      if(element.length > 25){
+        sortedPhraseObj['necromancer'].push(element)
+      } else if(element.length >10){
+        sortedPhraseObj['priest'].push(element)
+      } else {
+        sortedPhraseObj['acolyte'].push(element)
+      }
+    })
+  })
+  return sortedPhraseObj
+}
+
+
 const placeholder = "_";
 
 // sets up letters to be guessed

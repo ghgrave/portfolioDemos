@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { alpha, phrase } from "../../utils/HELPERS/data";
 
-import { resetAlphabet, maskPhrase, replaceGuessedLetters} from "../../utils/HELPERS/functions";
+import { resetAlphabet, maskPhrase, replaceGuessedLetters, sortPhrases} from "../../utils/HELPERS/functions";
 
 import "./Conjuring.css";
 import demon1 from "../../assets/images/demon1.jpg";
@@ -23,29 +23,44 @@ const Conjuring = () => {
   const [alphabetArray, setAlphabetArray] = useState(alpha.toUpperCase().split(""));
   const [guess, setGuess] = useState(initialState)
   const [gameOver, setGameOver] = useState('')
+  const [sortedPhrases, setSortedPhrases] = useState({})
+  const [skill, setSkill] = useState('acolyte')
 
-  const resetGuess = () => {
-    setGameOver('')
-    setGuess(initialState)
-    console.log(guess)
-    console.log('Reset?')
+  const reset = () => {
+    setAlphabetArray(alpha.toUpperCase().split(""))
+    setAlphabetArrayObj(resetAlphabet(alpha))
+    console.log('AAO: ', alphabetArrayObj)
+    console.log(alphabetArray)
+    let newData = [];
+    
+    alphabetArrayObj.forEach((el, i) => {
+      newData.push(
+        <p
+          className="alphaBoxes"
+          key={i}
+          data-letter={el.letter}
+          data-hidden={true}
+          onClick={el.available ? handleLetterClick : null}>
+          {el.letter}
+        </p>
+      );
+    });
+    setDisplayAlphabet(newData)
   }
-  const handleSolveSubmit = (event) => {
-    event.preventDefault()
-    if(guess.guess.toUpperCase() === tempPuzzle.toUpperCase()){
-      console.log('Winner')
-    } else {
-      console.log('Loser!!!')
+
+  const choosePhrase = () => {
+    if(sortedPhrases[skill] !== undefined){
+      let selectedPhrase = sortedPhrases[skill][Math.floor(Math.random()*sortedPhrases[skill].length)]
+      setMaskedPhrase(maskPhrase(selectedPhrase))
+      setTempPuzzle(selectedPhrase)
     }
-    resetGuess()
-    
   }
 
-  const handleSolveChange = (event) => {
-    setGuess({...guess, 
-          [event.target.name] :event.target.value})
-
-    
+  const handleSkillClick = (event) => {
+    console.log(event.target.value)
+    setSkill(event.target.value)
+    choosePhrase()
+    reset()
   }
 
   const handleLetterClick = (event) => {
@@ -78,7 +93,8 @@ const Conjuring = () => {
     alphabetArrayObj.forEach((el, i) => {
       newData.push(
         <p
-          className={el.available ? "alphaBoxes" : "alphaBoxes red"}
+          // className={el.available ? "alphaBoxes" : "alphaBoxes red"}
+          className= "alphaBoxes"
           key={i}
           data-letter={el.letter}
           data-hidden={true}
@@ -88,11 +104,13 @@ const Conjuring = () => {
       );
     });
     setDisplayAlphabet(newData)
-  }, [alphabetArrayObj, maskedPhrase]); //maskedPhrase required in order to 'save' state
+  }, [alphabetArrayObj, maskedPhrase, alphabetArray]); //maskedPhrase required in order to 'save' state
 
+    useEffect(()=>{
+      setSortedPhrases(sortPhrases(phrase))
+      choosePhrase(sortedPhrases)
+    }, [sortedPhrases, skill])
 
-    // let test1 =[]
-    // const test = maskedPhrase.split('').forEach((letter)=> test1.push(<p className='phraseLetters' >{letter}</p>))
 
   return (
     <div className="container-fluid" id="conjuring_container">
@@ -122,12 +140,12 @@ const Conjuring = () => {
             </div>
           </div>
         </div>
-        <div className="col my-3 text-center" id="solve_container">
-          <form className='mt-5' method='POST'>
-            <textarea className='mt-5' name="guess" id="" cols="30" rows="3" value={guess.solution} onChange={handleSolveChange}></textarea>
-            <br/>
-            <button className="btn btn-success btn-lg mt-2" onClick={handleSolveSubmit}>Solve</button>
-          </form>
+        <div className="col my-3 text-center" id="skills_container">
+          <h2 className='m-3'>Skill Level</h2>
+            <input type='button' className="btn btn-success btn-lg mt-2 text-uppercase" id='acolyte' onClick={handleSkillClick} value='acolyte'/>
+            <input type='button' className="btn btn-success btn-lg mt-2 text-uppercase" id='priest' onClick={handleSkillClick} value='priest'/>
+            <input type='button' className="btn btn-success btn-lg mt-2 text-uppercase" id='necro' onClick={handleSkillClick} value='necromancer'/>
+
         </div>
       </main>
       
