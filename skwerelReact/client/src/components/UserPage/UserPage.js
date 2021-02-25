@@ -40,6 +40,12 @@ function UserPage() {
       .catch(err => console.log(err));
   }, []);
 
+  // useEffect(()=>{
+  //   axios.get()
+  //   .then(response => console.log(response.data))
+  //   .catch(err => console.log('Error with retrieveing movies from backend'))
+  // })
+
   return (
     <Container fluid={true} id="userPage_container">
       <Row>
