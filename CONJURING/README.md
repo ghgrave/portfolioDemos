@@ -5,6 +5,13 @@ This is a hangman-styled game.
 7/25/2020 - initial push
     Can display ONE phrase and allows for gueesing of letter.
 
+7/29/2020 - great experience using useEffect() hook and why
+    Game is set up so user can choose 3 different skill levels
+    and actually able to guess puzzle phrase.
+    Alphabet resets when user changes skill levels.
+
+2/25/21 - updated npm vulnerabilities
+
 
 TODO: 
 1) new bootstrap arrangement
