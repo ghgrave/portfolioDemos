@@ -1,14 +1,50 @@
 /* Pantone 2021 palette */
 .palette1 {
-  color:#F5E400; /* Luxe Lemon*/
-  color:#888789; /* Chrome */
-  color:#B59A48; /* Glitterati*/
-  color:#6F926E; /* Green Glimmer*/
-  color:#4C96B3; /* Heavenly*/
-  color:#990011; /* Space Cherry*/
+  color: #f5e400; /* Luxe Lemon*/
+  color: #888789; /* Chrome */
+  color: #b59a48; /* Glitterati*/
+  color: #6f926e; /* Green Glimmer*/
+  color: #4c96b3; /* Heavenly*/
+  color: #990011; /* Space Cherry*/
 }
 
-body {
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+#body_landing {
   /* background: linear-gradient(#888789, #4C96B3) no-repeat cover; */
-  background: linear-gradient(to left, #4C96B3, #eee 75%, #888789 75%);
+  background: linear-gradient(to left, #4c96b3, #eee 75%, #888789 75%);
+}
+
+#body_landing input {
+  border: 2px solid #990011;
+  margin: 2% auto;
+}
+
+/* DECKS page */
+#body_decks {
+  background-image: linear-gradient(to top right, #6f926e, #244552);
+  height: 100vh;
+}
+#decks_container {
+  box-shadow: 2px 2px 20px black;
+  width: 80vw;
+  margin: 0 auto;
+  background-color: #4c96b3;
+  overflow: auto;
+  white-space: nowrap;
+  height: 33vh;
+}
+
+.decks {
+  box-shadow: 2px 2px 5px black;
+  height: 25vh;
+  width: 10vw;
+  display: inline-block;
+  margin: 3vh 3vw;
+  background-color: #6f926e;
 }

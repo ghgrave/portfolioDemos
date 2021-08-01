@@ -14,8 +14,19 @@ mongoose
   .then(() => console.log("Connected to database"))
   .catch((error) => console.log("Cannot connect to DB", error));
 
+const decks = require('./fakeData')
+console.log(decks)
+
 app.get('/', (req, res)=>{
     res.render('landing')
+})
+
+app.get('/new/deck', (req, res)=>{
+// something
+})
+
+app.get('/decks', (req, res) => {
+  res.render('decks', {data: decks})
 })
 
 const PORT = process.env.PORT || 3000;

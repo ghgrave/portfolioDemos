@@ -1,0 +1,14 @@
+<%- include('partials/header', {bodyId: "body_decks"}) %> 
+<h1>I am the decks</h1>
+
+<div id="decks_container">
+  <% console.log(data) %>
+  <% data.decks.forEach(el => { %>
+    <div class="decks">
+    <% let route = `/deck/${el.deckName}`%>
+    <a href=<%= route %> ><%= el.deckName.toUpperCase() %></a>
+    </div>
+  <% }) %>
+</div>
+
+<%- include('partials/footer') %> 
