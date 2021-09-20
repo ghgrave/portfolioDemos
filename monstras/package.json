@@ -1,0 +1,29 @@
+{
+  "name": "monstras",
+  "version": "1.0.0",
+  "description": "The world's largest database of monsters and related media.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "monsters",
+    "database",
+    "db",
+    "largest",
+    "books",
+    "tv",
+    "television",
+    "comics",
+    "movies",
+    "posters",
+    "creatures"
+  ],
+  "author": "gHgraveDesigns 2021",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.7"
+  }
+}
