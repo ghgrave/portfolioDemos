@@ -14,3 +14,9 @@
   box-sizing: border-box;
   font-family: 'Joti One', cursive;
 }
+
+.navbar-custom, .navbar-dark .navbar-brand {
+  background-color: black;
+  color: #39ff14;
+  text-shadow: 1px 1px 0 black, 1px 1px 0 white, 1px 1px 1px red;
+}
