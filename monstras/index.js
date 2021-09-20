@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 
 const monsterRoutes = require("./routes/monsterRoutes");
+const apiRoutes = require("./routes/apiRoutes");
 app.use("/monstras", monsterRoutes);
+app.use("/api/monstras/v1", apiRoutes)
 
 app.set("view engine", "ejs");
 
