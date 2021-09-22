@@ -2,9 +2,13 @@
   color: black;
   color: white;
   color: red;
-  color: orange;
   color: #39ff14;
   color: #ff6200;
+  color: #95DA25;
+  color: #C2CB1F;
+  color: #E2A31D;
+  color: #E25E1D;
+  color: #873811;
 }
 
 * {
@@ -15,8 +19,35 @@
   font-family: 'Joti One', cursive;
 }
 
+body {
+  background-image: linear-gradient(to bottom right, #ff6200,#E2A31D);
+  background-size: cover;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 1px 1px white;
+}
+
 .navbar-custom, .navbar-dark .navbar-brand {
   background-color: black;
   color: #39ff14;
   text-shadow: 1px 1px 0 black, 1px 1px 0 white, 1px 1px 1px red;
+}
+
+/* FOOTER */
+
+footer {
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+}
+
+footer #copy {
+  font-size: .75em;
 }
