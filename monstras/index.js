@@ -5,8 +5,10 @@ app.use(express.static("public"));
 
 const monsterRoutes = require("./routes/monsterRoutes");
 const apiRoutes = require("./routes/apiRoutes");
+const developerRoutes = require("./routes/developerRoutes");
 app.use("/monstras", monsterRoutes);
 app.use("/api/monstras/v1", apiRoutes);
+app.use("/developers", developerRoutes);
 
 app.set("view engine", "ejs");
 
